@@ -20,34 +20,11 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
+        private void InitializeBitMap()
         {
             this.Bit = new System.Windows.Forms.Label[64];
             this.Nibble = new System.Windows.Forms.TextBox[16];
-            
-            this.PanelBits = new System.Windows.Forms.Panel();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+
             this.Nibble[15] = new System.Windows.Forms.TextBox();
             this.Nibble[14] = new System.Windows.Forms.TextBox();
             this.Nibble[13] = new System.Windows.Forms.TextBox();
@@ -128,20 +105,7 @@
             this.Bit[2] = new System.Windows.Forms.Label();
             this.Bit[1] = new System.Windows.Forms.Label();
             this.Bit[0] = new System.Windows.Forms.Label();
-            this.tbDecimalValue = new System.Windows.Forms.TextBox();
-            this.tbHexValue = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnApply = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.PanelBits.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // PanelBits
-            // 
-            this.PanelBits.BackColor = System.Drawing.Color.White;
-            this.PanelBits.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+
             this.PanelBits.Controls.Add(this.Nibble[15]);
             this.PanelBits.Controls.Add(this.Nibble[14]);
             this.PanelBits.Controls.Add(this.Nibble[13]);
@@ -158,22 +122,7 @@
             this.PanelBits.Controls.Add(this.Nibble[2]);
             this.PanelBits.Controls.Add(this.Nibble[1]);
             this.PanelBits.Controls.Add(this.Nibble[0]);
-            this.PanelBits.Controls.Add(this.label17);
-            this.PanelBits.Controls.Add(this.label18);
-            this.PanelBits.Controls.Add(this.label19);
-            this.PanelBits.Controls.Add(this.label20);
-            this.PanelBits.Controls.Add(this.label21);
-            this.PanelBits.Controls.Add(this.label22);
-            this.PanelBits.Controls.Add(this.label23);
-            this.PanelBits.Controls.Add(this.label24);
-            this.PanelBits.Controls.Add(this.label16);
-            this.PanelBits.Controls.Add(this.label15);
-            this.PanelBits.Controls.Add(this.label14);
-            this.PanelBits.Controls.Add(this.label13);
-            this.PanelBits.Controls.Add(this.label12);
-            this.PanelBits.Controls.Add(this.label11);
-            this.PanelBits.Controls.Add(this.label10);
-            this.PanelBits.Controls.Add(this.label9);
+
             this.PanelBits.Controls.Add(this.Bit[63]);
             this.PanelBits.Controls.Add(this.Bit[62]);
             this.PanelBits.Controls.Add(this.Bit[61]);
@@ -238,23 +187,6 @@
             this.PanelBits.Controls.Add(this.Bit[2]);
             this.PanelBits.Controls.Add(this.Bit[1]);
             this.PanelBits.Controls.Add(this.Bit[0]);
-            this.PanelBits.Location = new System.Drawing.Point(12, 13);
-            this.PanelBits.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.PanelBits.Name = "PanelBits";
-            this.PanelBits.Size = new System.Drawing.Size(656, 117);
-            this.PanelBits.TabIndex = 0;
-            // 
-            // Nibble14
-            // 
-            this.Nibble[14].BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Nibble[14].Location = new System.Drawing.Point(84, 34);
-            this.Nibble[14].Multiline = true;
-            this.Nibble[14].Name = "Nibble14";
-            this.Nibble[14].Size = new System.Drawing.Size(77, 21);
-            this.Nibble[14].TabIndex = 156;
-            this.Nibble[14].TabStop = false;
-            this.Nibble[14].Text = "0";
-            this.Nibble[14].TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Nibble15
             // 
@@ -268,17 +200,17 @@
             this.Nibble[15].Text = "0";
             this.Nibble[15].TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // Nibble12
+            // Nibble14
             // 
-            this.Nibble[12].BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Nibble[12].Location = new System.Drawing.Point(246, 34);
-            this.Nibble[12].Multiline = true;
-            this.Nibble[12].Name = "Nibble12";
-            this.Nibble[12].Size = new System.Drawing.Size(77, 21);
-            this.Nibble[12].TabIndex = 154;
-            this.Nibble[12].TabStop = false;
-            this.Nibble[12].Text = "0";
-            this.Nibble[12].TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Nibble[14].BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Nibble[14].Location = new System.Drawing.Point(84, 34);
+            this.Nibble[14].Multiline = true;
+            this.Nibble[14].Name = "Nibble14";
+            this.Nibble[14].Size = new System.Drawing.Size(77, 21);
+            this.Nibble[14].TabIndex = 156;
+            this.Nibble[14].TabStop = false;
+            this.Nibble[14].Text = "0";
+            this.Nibble[14].TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Nibble13
             // 
@@ -292,17 +224,17 @@
             this.Nibble[13].Text = "0";
             this.Nibble[13].TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // Nibble10
+            // Nibble12
             // 
-            this.Nibble[10].BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Nibble[10].Location = new System.Drawing.Point(408, 34);
-            this.Nibble[10].Multiline = true;
-            this.Nibble[10].Name = "Nibble10";
-            this.Nibble[10].Size = new System.Drawing.Size(77, 21);
-            this.Nibble[10].TabIndex = 152;
-            this.Nibble[10].TabStop = false;
-            this.Nibble[10].Text = "0";
-            this.Nibble[10].TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Nibble[12].BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Nibble[12].Location = new System.Drawing.Point(246, 34);
+            this.Nibble[12].Multiline = true;
+            this.Nibble[12].Name = "Nibble12";
+            this.Nibble[12].Size = new System.Drawing.Size(77, 21);
+            this.Nibble[12].TabIndex = 154;
+            this.Nibble[12].TabStop = false;
+            this.Nibble[12].Text = "0";
+            this.Nibble[12].TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Nibble11
             // 
@@ -316,17 +248,17 @@
             this.Nibble[11].Text = "0";
             this.Nibble[11].TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // Nibble08
+            // Nibble10
             // 
-            this.Nibble[08].BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Nibble[08].Location = new System.Drawing.Point(572, 34);
-            this.Nibble[08].Multiline = true;
-            this.Nibble[08].Name = "Nibble08";
-            this.Nibble[08].Size = new System.Drawing.Size(77, 21);
-            this.Nibble[08].TabIndex = 150;
-            this.Nibble[08].TabStop = false;
-            this.Nibble[08].Text = "0";
-            this.Nibble[08].TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Nibble[10].BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Nibble[10].Location = new System.Drawing.Point(408, 34);
+            this.Nibble[10].Multiline = true;
+            this.Nibble[10].Name = "Nibble10";
+            this.Nibble[10].Size = new System.Drawing.Size(77, 21);
+            this.Nibble[10].TabIndex = 152;
+            this.Nibble[10].TabStop = false;
+            this.Nibble[10].Text = "0";
+            this.Nibble[10].TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Nibble09
             // 
@@ -340,17 +272,17 @@
             this.Nibble[09].Text = "0";
             this.Nibble[09].TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // Nibble06
+            // Nibble08
             // 
-            this.Nibble[06].BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Nibble[06].Location = new System.Drawing.Point(83, 91);
-            this.Nibble[06].Multiline = true;
-            this.Nibble[06].Name = "Nibble06";
-            this.Nibble[06].Size = new System.Drawing.Size(77, 21);
-            this.Nibble[06].TabIndex = 148;
-            this.Nibble[06].TabStop = false;
-            this.Nibble[06].Text = "0";
-            this.Nibble[06].TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Nibble[08].BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Nibble[08].Location = new System.Drawing.Point(572, 34);
+            this.Nibble[08].Multiline = true;
+            this.Nibble[08].Name = "Nibble08";
+            this.Nibble[08].Size = new System.Drawing.Size(77, 21);
+            this.Nibble[08].TabIndex = 150;
+            this.Nibble[08].TabStop = false;
+            this.Nibble[08].Text = "0";
+            this.Nibble[08].TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Nibble07
             // 
@@ -364,17 +296,17 @@
             this.Nibble[07].Text = "0";
             this.Nibble[07].TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // Nibble04
+            // Nibble06
             // 
-            this.Nibble[04].BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Nibble[04].Location = new System.Drawing.Point(245, 91);
-            this.Nibble[04].Multiline = true;
-            this.Nibble[04].Name = "Nibble04";
-            this.Nibble[04].Size = new System.Drawing.Size(77, 21);
-            this.Nibble[04].TabIndex = 146;
-            this.Nibble[04].TabStop = false;
-            this.Nibble[04].Text = "0";
-            this.Nibble[04].TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Nibble[06].BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Nibble[06].Location = new System.Drawing.Point(83, 91);
+            this.Nibble[06].Multiline = true;
+            this.Nibble[06].Name = "Nibble06";
+            this.Nibble[06].Size = new System.Drawing.Size(77, 21);
+            this.Nibble[06].TabIndex = 148;
+            this.Nibble[06].TabStop = false;
+            this.Nibble[06].Text = "0";
+            this.Nibble[06].TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Nibble05
             // 
@@ -388,17 +320,17 @@
             this.Nibble[05].Text = "0";
             this.Nibble[05].TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // Nibble02
+            // Nibble04
             // 
-            this.Nibble[02].BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Nibble[02].Location = new System.Drawing.Point(407, 91);
-            this.Nibble[02].Multiline = true;
-            this.Nibble[02].Name = "Nibble02";
-            this.Nibble[02].Size = new System.Drawing.Size(77, 21);
-            this.Nibble[02].TabIndex = 144;
-            this.Nibble[02].TabStop = false;
-            this.Nibble[02].Text = "0";
-            this.Nibble[02].TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Nibble[04].BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Nibble[04].Location = new System.Drawing.Point(245, 91);
+            this.Nibble[04].Multiline = true;
+            this.Nibble[04].Name = "Nibble04";
+            this.Nibble[04].Size = new System.Drawing.Size(77, 21);
+            this.Nibble[04].TabIndex = 146;
+            this.Nibble[04].TabStop = false;
+            this.Nibble[04].Text = "0";
+            this.Nibble[04].TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Nibble03
             // 
@@ -412,17 +344,17 @@
             this.Nibble[03].Text = "0";
             this.Nibble[03].TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // Nibble00
+            // Nibble02
             // 
-            this.Nibble[00].BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.Nibble[00].Location = new System.Drawing.Point(571, 91);
-            this.Nibble[00].Multiline = true;
-            this.Nibble[00].Name = "Nibble00";
-            this.Nibble[00].Size = new System.Drawing.Size(77, 21);
-            this.Nibble[00].TabIndex = 142;
-            this.Nibble[00].TabStop = false;
-            this.Nibble[00].Text = "0";
-            this.Nibble[00].TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Nibble[02].BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Nibble[02].Location = new System.Drawing.Point(407, 91);
+            this.Nibble[02].Multiline = true;
+            this.Nibble[02].Name = "Nibble02";
+            this.Nibble[02].Size = new System.Drawing.Size(77, 21);
+            this.Nibble[02].TabIndex = 144;
+            this.Nibble[02].TabStop = false;
+            this.Nibble[02].Text = "0";
+            this.Nibble[02].TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Nibble01
             // 
@@ -436,93 +368,20 @@
             this.Nibble[01].Text = "0";
             this.Nibble[01].TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label17
+            // Nibble00
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label17.Location = new System.Drawing.Point(1, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(19, 13);
-            this.label17.TabIndex = 140;
-            this.label17.Text = "63";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label18.Location = new System.Drawing.Point(163, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(19, 13);
-            this.label18.TabIndex = 139;
-            this.label18.Text = "55";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label19.Location = new System.Drawing.Point(326, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(19, 13);
-            this.label19.TabIndex = 138;
-            this.label19.Text = "47";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label20.Location = new System.Drawing.Point(490, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(19, 13);
-            this.label20.TabIndex = 137;
-            this.label20.Text = "39";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label21.Location = new System.Drawing.Point(142, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(19, 13);
-            this.label21.TabIndex = 136;
-            this.label21.Text = "56";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label22.Location = new System.Drawing.Point(304, 0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(19, 13);
-            this.label22.TabIndex = 135;
-            this.label22.Text = "48";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label23.Location = new System.Drawing.Point(467, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(19, 13);
-            this.label23.TabIndex = 134;
-            this.label23.Text = "40";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label24.Location = new System.Drawing.Point(630, 0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(19, 13);
-            this.label24.TabIndex = 133;
-            this.label24.Text = "32";
+            this.Nibble[00].BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Nibble[00].Location = new System.Drawing.Point(571, 91);
+            this.Nibble[00].Multiline = true;
+            this.Nibble[00].Name = "Nibble00";
+            this.Nibble[00].Size = new System.Drawing.Size(77, 21);
+            this.Nibble[00].TabIndex = 142;
+            this.Nibble[00].TabStop = false;
+            this.Nibble[00].Text = "0";
+            this.Nibble[00].TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            
+
+
             // 
             // Bit63
             // 
@@ -844,94 +703,6 @@
             this.Bit[32].TabIndex = 93;
             this.Bit[32].Text = "0";
             // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label16.Location = new System.Drawing.Point(0, 57);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(19, 13);
-            this.label16.TabIndex = 92;
-            this.label16.Text = "31";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label15.Location = new System.Drawing.Point(162, 57);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(19, 13);
-            this.label15.TabIndex = 91;
-            this.label15.Text = "23";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label14.Location = new System.Drawing.Point(325, 57);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(19, 13);
-            this.label14.TabIndex = 90;
-            this.label14.Text = "15";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label13.Location = new System.Drawing.Point(489, 57);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(13, 13);
-            this.label13.TabIndex = 89;
-            this.label13.Text = "7";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label12.Location = new System.Drawing.Point(141, 57);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(19, 13);
-            this.label12.TabIndex = 88;
-            this.label12.Text = "24";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label11.Location = new System.Drawing.Point(303, 57);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(19, 13);
-            this.label11.TabIndex = 87;
-            this.label11.Text = "16";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label10.Location = new System.Drawing.Point(473, 57);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(13, 13);
-            this.label10.TabIndex = 86;
-            this.label10.Text = "8";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label9.Location = new System.Drawing.Point(635, 57);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(13, 13);
-            this.label9.TabIndex = 85;
-            this.label9.Text = "0";
-            // 
             // Bit31
             // 
             this.Bit[31].AutoSize = true;
@@ -1251,22 +1022,281 @@
             this.Bit[00].Size = new System.Drawing.Size(20, 21);
             this.Bit[00].TabIndex = 45;
             this.Bit[00].Text = "0";
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.PanelBits = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.tbDecimalPosValue = new System.Windows.Forms.TextBox();
+            this.tbHexValue = new System.Windows.Forms.TextBox();
+            this.lblHex = new System.Windows.Forms.Label();
+            this.lblDecimal = new System.Windows.Forms.Label();
+            this.btnApply = new System.Windows.Forms.Button();
+            this.btnResetAll = new System.Windows.Forms.Button();
+            this.lbl0x = new System.Windows.Forms.Label();
+            this.lblOctal = new System.Windows.Forms.Label();
+            this.tbOctalValue = new System.Windows.Forms.TextBox();
+            this.btnInvert = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbDecimalNegValue = new System.Windows.Forms.TextBox();
+            this.btnSetAll = new System.Windows.Forms.Button();
+            this.btnShiftRight = new System.Windows.Forms.Button();
+            this.btnShiftLeft = new System.Windows.Forms.Button();
+            this.btnAnd = new System.Windows.Forms.Button();
+            this.btnOr = new System.Windows.Forms.Button();
+            this.btnXor = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tbInput = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tbOutput = new System.Windows.Forms.TextBox();
+            this.PanelBits.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.SuspendLayout();
             // 
-            // tbDecimalValue
+            // PanelBits
             // 
-            this.tbDecimalValue.Location = new System.Drawing.Point(85, 170);
-            this.tbDecimalValue.Name = "tbDecimalValue";
-            this.tbDecimalValue.Size = new System.Drawing.Size(207, 27);
-            this.tbDecimalValue.TabIndex = 1;
-            this.tbDecimalValue.TabStop = false;
-            this.tbDecimalValue.Text = "0";
-            this.tbDecimalValue.WordWrap = false;
-            this.tbDecimalValue.TextChanged += new System.EventHandler(this.tbXValue_TextChanged);
-            this.tbDecimalValue.Leave += new System.EventHandler(this.tbDecimalValue_Leave);
+            this.PanelBits.BackColor = System.Drawing.Color.White;
+            this.PanelBits.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.PanelBits.Controls.Add(this.label17);
+            this.PanelBits.Controls.Add(this.label18);
+            this.PanelBits.Controls.Add(this.label19);
+            this.PanelBits.Controls.Add(this.label20);
+            this.PanelBits.Controls.Add(this.label21);
+            this.PanelBits.Controls.Add(this.label22);
+            this.PanelBits.Controls.Add(this.label23);
+            this.PanelBits.Controls.Add(this.label24);
+            this.PanelBits.Controls.Add(this.label16);
+            this.PanelBits.Controls.Add(this.label15);
+            this.PanelBits.Controls.Add(this.label14);
+            this.PanelBits.Controls.Add(this.label13);
+            this.PanelBits.Controls.Add(this.label12);
+            this.PanelBits.Controls.Add(this.label11);
+            this.PanelBits.Controls.Add(this.label10);
+            this.PanelBits.Controls.Add(this.label9);
+            this.PanelBits.Location = new System.Drawing.Point(12, 13);
+            this.PanelBits.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.PanelBits.Name = "PanelBits";
+            this.PanelBits.Size = new System.Drawing.Size(656, 117);
+            this.PanelBits.TabIndex = 0;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label17.Location = new System.Drawing.Point(1, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(19, 13);
+            this.label17.TabIndex = 140;
+            this.label17.Text = "63";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label18.Location = new System.Drawing.Point(163, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(19, 13);
+            this.label18.TabIndex = 139;
+            this.label18.Text = "55";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label19.Location = new System.Drawing.Point(326, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(19, 13);
+            this.label19.TabIndex = 138;
+            this.label19.Text = "47";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label20.Location = new System.Drawing.Point(490, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(19, 13);
+            this.label20.TabIndex = 137;
+            this.label20.Text = "39";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label21.Location = new System.Drawing.Point(142, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(19, 13);
+            this.label21.TabIndex = 136;
+            this.label21.Text = "56";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label22.Location = new System.Drawing.Point(304, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(19, 13);
+            this.label22.TabIndex = 135;
+            this.label22.Text = "48";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label23.Location = new System.Drawing.Point(467, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(19, 13);
+            this.label23.TabIndex = 134;
+            this.label23.Text = "40";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label24.Location = new System.Drawing.Point(630, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(19, 13);
+            this.label24.TabIndex = 133;
+            this.label24.Text = "32";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label16.Location = new System.Drawing.Point(0, 57);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(19, 13);
+            this.label16.TabIndex = 92;
+            this.label16.Text = "31";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label15.Location = new System.Drawing.Point(162, 57);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(19, 13);
+            this.label15.TabIndex = 91;
+            this.label15.Text = "23";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label14.Location = new System.Drawing.Point(325, 57);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(19, 13);
+            this.label14.TabIndex = 90;
+            this.label14.Text = "15";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label13.Location = new System.Drawing.Point(489, 57);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(13, 13);
+            this.label13.TabIndex = 89;
+            this.label13.Text = "7";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label12.Location = new System.Drawing.Point(141, 57);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(19, 13);
+            this.label12.TabIndex = 88;
+            this.label12.Text = "24";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label11.Location = new System.Drawing.Point(303, 57);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(19, 13);
+            this.label11.TabIndex = 87;
+            this.label11.Text = "16";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label10.Location = new System.Drawing.Point(473, 57);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(13, 13);
+            this.label10.TabIndex = 86;
+            this.label10.Text = "8";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label9.Location = new System.Drawing.Point(635, 57);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(13, 13);
+            this.label9.TabIndex = 85;
+            this.label9.Text = "0";
+            // 
+            // tbDecimalPosValue
+            // 
+            this.tbDecimalPosValue.Location = new System.Drawing.Point(114, 145);
+            this.tbDecimalPosValue.Name = "tbDecimalPosValue";
+            this.tbDecimalPosValue.Size = new System.Drawing.Size(207, 27);
+            this.tbDecimalPosValue.TabIndex = 1;
+            this.tbDecimalPosValue.TabStop = false;
+            this.tbDecimalPosValue.Text = "0";
+            this.tbDecimalPosValue.WordWrap = false;
+            this.tbDecimalPosValue.TextChanged += new System.EventHandler(this.tbXValue_TextChanged);
+            this.tbDecimalPosValue.Leave += new System.EventHandler(this.tbDecimalValue_Leave);
             // 
             // tbHexValue
             // 
-            this.tbHexValue.Location = new System.Drawing.Point(85, 137);
+            this.tbHexValue.Location = new System.Drawing.Point(404, 145);
             this.tbHexValue.MaxLength = 16;
             this.tbHexValue.Name = "tbHexValue";
             this.tbHexValue.Size = new System.Drawing.Size(207, 27);
@@ -1277,65 +1307,273 @@
             this.tbHexValue.TextChanged += new System.EventHandler(this.tbXValue_TextChanged);
             this.tbHexValue.Leave += new System.EventHandler(this.tbHexValue_Leave);
             // 
-            // label1
+            // lblHex
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 140);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 19);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Hex:";
+            this.lblHex.AutoSize = true;
+            this.lblHex.Location = new System.Drawing.Point(327, 148);
+            this.lblHex.Name = "lblHex";
+            this.lblHex.Size = new System.Drawing.Size(42, 19);
+            this.lblHex.TabIndex = 3;
+            this.lblHex.Text = "Hex:";
             // 
-            // label2
+            // lblDecimal
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 173);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 19);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Decimal:";
+            this.lblDecimal.AutoSize = true;
+            this.lblDecimal.Location = new System.Drawing.Point(8, 148);
+            this.lblDecimal.Name = "lblDecimal";
+            this.lblDecimal.Size = new System.Drawing.Size(100, 19);
+            this.lblDecimal.TabIndex = 4;
+            this.lblDecimal.Text = "Decimal (+):";
             // 
             // btnApply
             // 
-            this.btnApply.Location = new System.Drawing.Point(300, 137);
+            this.btnApply.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnApply.Location = new System.Drawing.Point(616, 145);
             this.btnApply.Name = "btnApply";
-            this.btnApply.Size = new System.Drawing.Size(82, 60);
+            this.btnApply.Size = new System.Drawing.Size(52, 63);
             this.btnApply.TabIndex = 5;
             this.btnApply.Text = "Apply";
             this.btnApply.UseVisualStyleBackColor = true;
             this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
             // 
-            // btnReset
+            // btnResetAll
             // 
-            this.btnReset.Location = new System.Drawing.Point(388, 137);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(82, 60);
-            this.btnReset.TabIndex = 6;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            this.btnResetAll.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnResetAll.Location = new System.Drawing.Point(14, 66);
+            this.btnResetAll.Name = "btnResetAll";
+            this.btnResetAll.Size = new System.Drawing.Size(82, 37);
+            this.btnResetAll.TabIndex = 6;
+            this.btnResetAll.Text = "Reset All";
+            this.btnResetAll.UseVisualStyleBackColor = true;
+            this.btnResetAll.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // lbl0x
+            // 
+            this.lbl0x.AutoSize = true;
+            this.lbl0x.Location = new System.Drawing.Point(375, 148);
+            this.lbl0x.Name = "lbl0x";
+            this.lbl0x.Size = new System.Drawing.Size(26, 19);
+            this.lbl0x.TabIndex = 7;
+            this.lbl0x.Text = "0x";
+            // 
+            // lblOctal
+            // 
+            this.lblOctal.AutoSize = true;
+            this.lblOctal.Location = new System.Drawing.Point(327, 181);
+            this.lblOctal.Name = "lblOctal";
+            this.lblOctal.Size = new System.Drawing.Size(51, 19);
+            this.lblOctal.TabIndex = 9;
+            this.lblOctal.Text = "Octal:";
+            // 
+            // tbOctalValue
+            // 
+            this.tbOctalValue.Location = new System.Drawing.Point(404, 181);
+            this.tbOctalValue.Name = "tbOctalValue";
+            this.tbOctalValue.ReadOnly = true;
+            this.tbOctalValue.Size = new System.Drawing.Size(207, 27);
+            this.tbOctalValue.TabIndex = 8;
+            this.tbOctalValue.TabStop = false;
+            this.tbOctalValue.Text = "0";
+            this.tbOctalValue.WordWrap = false;
+            // 
+            // btnInvert
+            // 
+            this.btnInvert.Location = new System.Drawing.Point(14, 23);
+            this.btnInvert.Name = "btnInvert";
+            this.btnInvert.Size = new System.Drawing.Size(82, 37);
+            this.btnInvert.TabIndex = 10;
+            this.btnInvert.Text = "Invert";
+            this.btnInvert.UseVisualStyleBackColor = true;
+            this.btnInvert.Click += new System.EventHandler(this.btnInvert_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 181);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(94, 19);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Decimal (-):";
+            // 
+            // tbDecimalNegValue
+            // 
+            this.tbDecimalNegValue.Location = new System.Drawing.Point(114, 178);
+            this.tbDecimalNegValue.Name = "tbDecimalNegValue";
+            this.tbDecimalNegValue.ReadOnly = true;
+            this.tbDecimalNegValue.Size = new System.Drawing.Size(207, 27);
+            this.tbDecimalNegValue.TabIndex = 11;
+            this.tbDecimalNegValue.TabStop = false;
+            this.tbDecimalNegValue.Text = "0";
+            this.tbDecimalNegValue.WordWrap = false;
+            // 
+            // btnSetAll
+            // 
+            this.btnSetAll.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnSetAll.Location = new System.Drawing.Point(14, 109);
+            this.btnSetAll.Name = "btnSetAll";
+            this.btnSetAll.Size = new System.Drawing.Size(82, 37);
+            this.btnSetAll.TabIndex = 13;
+            this.btnSetAll.Text = "Set All";
+            this.btnSetAll.UseVisualStyleBackColor = true;
+            this.btnSetAll.Click += new System.EventHandler(this.btnSetAll_Click);
+            // 
+            // btnShiftRight
+            // 
+            this.btnShiftRight.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnShiftRight.Location = new System.Drawing.Point(195, 57);
+            this.btnShiftRight.Name = "btnShiftRight";
+            this.btnShiftRight.Size = new System.Drawing.Size(51, 26);
+            this.btnShiftRight.TabIndex = 14;
+            this.btnShiftRight.Text = ">>";
+            this.btnShiftRight.UseVisualStyleBackColor = true;
+            // 
+            // btnShiftLeft
+            // 
+            this.btnShiftLeft.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnShiftLeft.Location = new System.Drawing.Point(252, 56);
+            this.btnShiftLeft.Name = "btnShiftLeft";
+            this.btnShiftLeft.Size = new System.Drawing.Size(51, 26);
+            this.btnShiftLeft.TabIndex = 15;
+            this.btnShiftLeft.Text = "<<";
+            this.btnShiftLeft.UseVisualStyleBackColor = true;
+            // 
+            // btnAnd
+            // 
+            this.btnAnd.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnAnd.Location = new System.Drawing.Point(81, 57);
+            this.btnAnd.Name = "btnAnd";
+            this.btnAnd.Size = new System.Drawing.Size(51, 26);
+            this.btnAnd.TabIndex = 17;
+            this.btnAnd.Text = "&&";
+            this.btnAnd.UseVisualStyleBackColor = true;
+            // 
+            // btnOr
+            // 
+            this.btnOr.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnOr.Location = new System.Drawing.Point(24, 57);
+            this.btnOr.Name = "btnOr";
+            this.btnOr.Size = new System.Drawing.Size(51, 26);
+            this.btnOr.TabIndex = 16;
+            this.btnOr.Text = "|";
+            this.btnOr.UseVisualStyleBackColor = true;
+            // 
+            // btnXor
+            // 
+            this.btnXor.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnXor.Location = new System.Drawing.Point(138, 57);
+            this.btnXor.Name = "btnXor";
+            this.btnXor.Size = new System.Drawing.Size(51, 26);
+            this.btnXor.TabIndex = 18;
+            this.btnXor.Text = "^";
+            this.btnXor.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnInvert);
+            this.groupBox1.Controls.Add(this.btnResetAll);
+            this.groupBox1.Controls.Add(this.btnSetAll);
+            this.groupBox1.Location = new System.Drawing.Point(12, 214);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(112, 160);
+            this.groupBox1.TabIndex = 19;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Controls";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.tbOutput);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.tbInput);
+            this.groupBox2.Controls.Add(this.btnShiftRight);
+            this.groupBox2.Controls.Add(this.btnShiftLeft);
+            this.groupBox2.Controls.Add(this.btnXor);
+            this.groupBox2.Controls.Add(this.btnOr);
+            this.groupBox2.Controls.Add(this.btnAnd);
+            this.groupBox2.Location = new System.Drawing.Point(130, 214);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(317, 160);
+            this.groupBox2.TabIndex = 20;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Operations";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(68, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(26, 19);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "0x";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(56, 140);
+            this.label3.Location = new System.Drawing.Point(10, 26);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(26, 19);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "0x";
+            this.label3.Size = new System.Drawing.Size(47, 19);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "Input";
+            // 
+            // tbInput
+            // 
+            this.tbInput.Location = new System.Drawing.Point(96, 23);
+            this.tbInput.MaxLength = 16;
+            this.tbInput.Name = "tbInput";
+            this.tbInput.Size = new System.Drawing.Size(207, 27);
+            this.tbInput.TabIndex = 19;
+            this.tbInput.TabStop = false;
+            this.tbInput.Text = "0000000000000000";
+            this.tbInput.WordWrap = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(68, 92);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(26, 19);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "0x";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(10, 92);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 19);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "Output";
+            // 
+            // tbOutput
+            // 
+            this.tbOutput.Location = new System.Drawing.Point(96, 89);
+            this.tbOutput.MaxLength = 16;
+            this.tbOutput.Name = "tbOutput";
+            this.tbOutput.Size = new System.Drawing.Size(207, 27);
+            this.tbOutput.TabIndex = 22;
+            this.tbOutput.TabStop = false;
+            this.tbOutput.Text = "0000000000000000";
+            this.tbOutput.WordWrap = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(679, 353);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnReset);
-            this.Controls.Add(this.btnApply);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(679, 386);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.tbDecimalNegValue);
+            this.Controls.Add(this.lblOctal);
+            this.Controls.Add(this.tbOctalValue);
+            this.Controls.Add(this.lbl0x);
+            this.Controls.Add(this.btnApply);
+            this.Controls.Add(this.lblDecimal);
+            this.Controls.Add(this.lblHex);
             this.Controls.Add(this.tbHexValue);
-            this.Controls.Add(this.tbDecimalValue);
+            this.Controls.Add(this.tbDecimalPosValue);
             this.Controls.Add(this.PanelBits);
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -1343,6 +1581,9 @@
             this.Text = "Bit Analyzer";
             this.PanelBits.ResumeLayout(false);
             this.PanelBits.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1369,13 +1610,32 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox tbDecimalValue;
+        private System.Windows.Forms.TextBox tbDecimalPosValue;
         private System.Windows.Forms.TextBox tbHexValue;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblHex;
+        private System.Windows.Forms.Label lblDecimal;
         private System.Windows.Forms.Button btnApply;
-        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnResetAll;
+        private System.Windows.Forms.Label lbl0x;
+        private System.Windows.Forms.Label lblOctal;
+        private System.Windows.Forms.TextBox tbOctalValue;
+        private System.Windows.Forms.Button btnInvert;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox tbDecimalNegValue;
+        private System.Windows.Forms.Button btnSetAll;
+        private System.Windows.Forms.Button btnShiftRight;
+        private System.Windows.Forms.Button btnShiftLeft;
+        private System.Windows.Forms.Button btnAnd;
+        private System.Windows.Forms.Button btnOr;
+        private System.Windows.Forms.Button btnXor;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox tbOutput;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox tbInput;
     }
 }
 

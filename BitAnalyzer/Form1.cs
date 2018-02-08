@@ -22,6 +22,7 @@ namespace BitAnalyzer
         public Form1()
         {
             InitializeComponent();
+            InitializeBitMap();
             /*
             int SizeW = (this.PanelBits.Width / BitsPerRow)  + 2; 
             int SizeH = (this.PanelBits.Height / 2) + 2; 
@@ -135,7 +136,9 @@ namespace BitAnalyzer
             }
 
             tbHexValue.Text = HexValue.ToString("X16");
-            tbDecimalValue.Text = HexValue.ToString();
+            tbDecimalPosValue.Text = HexValue.ToString();
+            tbDecimalNegValue.Text = ((Int64)UInt64.Parse(tbDecimalPosValue.Text)).ToString();
+            tbOctalValue.Text = ToOctal(Convert.ToUInt64(tbDecimalPosValue.Text));
         }
 
         private void tbXValue_TextChanged(object sender, EventArgs e)
@@ -196,34 +199,20 @@ namespace BitAnalyzer
 
         private void tbDecimalValue_Leave(object sender, EventArgs e)
         {
-            if (true == String.IsNullOrEmpty(tbDecimalValue.Text))
+            if (true == String.IsNullOrEmpty(tbDecimalPosValue.Text))
             {
-                tbDecimalValue.Text = "0";
+                tbDecimalPosValue.Text = "0";
             }
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            /*reset all fields to 0s*/
-            foreach (var PanelControl in this.PanelBits.Controls)
-            {
-                switch (PanelControl.GetType().ToString())
-                {
-                    case "System.Windows.Forms.TextBox":
-                        ((TextBox)PanelControl).Text = "0";
-                        break;
-                    case "System.Windows.Forms.Label":
-                        if (true == ((Label)PanelControl).Name.StartsWith("Bit"))
-                        {
-                            ((Label)PanelControl).Text = "0";
-                        }
-                        break;
-                    default:
-                        break;
-                }
-            }
-            tbHexValue.Text = (0).ToString("X16");
-            tbDecimalValue.Text = "0";
+            SetAllFieldsValue("0");
+        }
+
+        private void btnSetAll_Click(object sender, EventArgs e)
+        {
+            SetAllFieldsValue("1");
         }
 
         private void NibbleX_TextChanged(object sender, EventArgs e)
@@ -248,19 +237,19 @@ namespace BitAnalyzer
             {
                 Source = tbHexValue;
                 sourceStyle = System.Globalization.NumberStyles.HexNumber;
-                Target = tbDecimalValue;
+                Target = tbDecimalPosValue;
                 targetStyle = "0";
             }
             else
             {
-                Source = tbDecimalValue;
+                Source = tbDecimalPosValue;
                 sourceStyle = System.Globalization.NumberStyles.Integer;
                 Target = tbHexValue;
                 targetStyle = "X16";
             }
             /*Convert value from hex(decimal) to decimal(hex)*/
             Target.Text = UInt64.Parse(Source.Text, sourceStyle).ToString(targetStyle);
-            MessageBox.Show(Convert.ToString(long.Parse(Source.Text, sourceStyle), 8).ToString());
+            tbOctalValue.Text = ToOctal(Convert.ToUInt64(tbDecimalPosValue.Text));
             /*Clear all nibbles fields*/
             foreach (var Cont in this.PanelBits.Controls.OfType<TextBox>())
             {
@@ -271,6 +260,60 @@ namespace BitAnalyzer
             {
                 Nibble[counter].Text = tbHexValue.Text.Substring((tbHexValue.Text.Length - counter - 1), 1);
             }
+            tbDecimalNegValue.Text = ((Int64)UInt64.Parse(tbDecimalPosValue.Text)).ToString();
+        }
+
+        private void btnInvert_Click(object sender, EventArgs e)
+        {
+            if (true == IsHexChangeIsLastEdit)
+            {
+                tbHexValue.Text = (~UInt64.Parse(tbHexValue.Text, System.Globalization.NumberStyles.HexNumber)).ToString("X16");
+            }
+            else
+            {
+                tbDecimalPosValue.Text = (~UInt64.Parse(tbDecimalPosValue.Text, System.Globalization.NumberStyles.HexNumber)).ToString(); 
+            }
+            Object obj = new Object();
+            EventArgs arg = new EventArgs();
+            btnApply_Click(obj, arg);
+        }
+
+        private string ToOctal(UInt64 Number)
+        {
+            string RetString = null;
+            while (Number != 0)
+            {
+                RetString += Number % 8;
+                Number /= 8;
+            }
+            return (RetString == null) ? "0" : new String(RetString.ToCharArray().Reverse().ToArray());
+        }
+
+        private void SetAllFieldsValue(string value)
+        {
+            /*reset all fields to 0s*/
+            foreach (var PanelControl in this.PanelBits.Controls)
+            {
+                switch (PanelControl.GetType().ToString())
+                {
+                    case "System.Windows.Forms.TextBox":
+                        ((TextBox)PanelControl).Text = (value == "1") ? "F" : value;
+                        break;
+                    case "System.Windows.Forms.Label":
+                        if (true == ((Label)PanelControl).Name.StartsWith("Bit"))
+                        {
+                            ((Label)PanelControl).Text = value;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            tbDecimalPosValue.Text = (value == "1") ? UInt64.MaxValue.ToString() : value;
+            Object obj = new Object();
+            EventArgs arg = new EventArgs();
+            btnApply_Click(obj, arg);
         }
     }
 }
