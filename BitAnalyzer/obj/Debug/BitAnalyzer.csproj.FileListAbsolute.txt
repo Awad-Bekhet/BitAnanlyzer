@@ -6,4 +6,3 @@ C:\Users\AwadBekhet\Documents\Visual Studio 2012\Projects\BitAnalyzer\BitAnalyze
 C:\Users\AwadBekhet\Documents\Visual Studio 2012\Projects\BitAnalyzer\BitAnalyzer\obj\Debug\BitAnalyzer.csproj.GenerateResource.Cache
 C:\Users\AwadBekhet\Documents\Visual Studio 2012\Projects\BitAnalyzer\BitAnalyzer\obj\Debug\BitAnalyzer.exe
 C:\Users\AwadBekhet\Documents\Visual Studio 2012\Projects\BitAnalyzer\BitAnalyzer\obj\Debug\BitAnalyzer.pdb
-C:\Users\AwadBekhet\Documents\Visual Studio 2012\Projects\BitAnalyzer\BitAnalyzer\obj\Debug\BitAnalyzer.csprojResolveAssemblyReference.cache

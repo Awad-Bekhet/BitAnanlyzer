@@ -1069,15 +1069,37 @@
             this.btnXor = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tbInput = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.tbOutput = new System.Windows.Forms.TextBox();
+            this.tbOutputLogical = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tbInputLogical = new System.Windows.Forms.TextBox();
+            this.tbShiftValue = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tbMoveToResult = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tbOutputShift = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.tbInputShift = new System.Windows.Forms.TextBox();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.lblByte = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblKByte = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblMByte = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblGByte = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tbClear = new System.Windows.Forms.Button();
             this.PanelBits.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelBits
@@ -1296,7 +1318,7 @@
             // 
             // tbHexValue
             // 
-            this.tbHexValue.Location = new System.Drawing.Point(404, 145);
+            this.tbHexValue.Location = new System.Drawing.Point(402, 145);
             this.tbHexValue.MaxLength = 16;
             this.tbHexValue.Name = "tbHexValue";
             this.tbHexValue.Size = new System.Drawing.Size(207, 27);
@@ -1328,9 +1350,9 @@
             // btnApply
             // 
             this.btnApply.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnApply.Location = new System.Drawing.Point(616, 145);
+            this.btnApply.Location = new System.Drawing.Point(613, 145);
             this.btnApply.Name = "btnApply";
-            this.btnApply.Size = new System.Drawing.Size(52, 63);
+            this.btnApply.Size = new System.Drawing.Size(55, 63);
             this.btnApply.TabIndex = 5;
             this.btnApply.Text = "Apply";
             this.btnApply.UseVisualStyleBackColor = true;
@@ -1339,9 +1361,9 @@
             // btnResetAll
             // 
             this.btnResetAll.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.btnResetAll.Location = new System.Drawing.Point(14, 66);
+            this.btnResetAll.Location = new System.Drawing.Point(7, 56);
             this.btnResetAll.Name = "btnResetAll";
-            this.btnResetAll.Size = new System.Drawing.Size(82, 37);
+            this.btnResetAll.Size = new System.Drawing.Size(65, 30);
             this.btnResetAll.TabIndex = 6;
             this.btnResetAll.Text = "Reset All";
             this.btnResetAll.UseVisualStyleBackColor = true;
@@ -1367,7 +1389,7 @@
             // 
             // tbOctalValue
             // 
-            this.tbOctalValue.Location = new System.Drawing.Point(404, 181);
+            this.tbOctalValue.Location = new System.Drawing.Point(402, 181);
             this.tbOctalValue.Name = "tbOctalValue";
             this.tbOctalValue.ReadOnly = true;
             this.tbOctalValue.Size = new System.Drawing.Size(207, 27);
@@ -1378,9 +1400,10 @@
             // 
             // btnInvert
             // 
-            this.btnInvert.Location = new System.Drawing.Point(14, 23);
+            this.btnInvert.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.btnInvert.Location = new System.Drawing.Point(7, 20);
             this.btnInvert.Name = "btnInvert";
-            this.btnInvert.Size = new System.Drawing.Size(82, 37);
+            this.btnInvert.Size = new System.Drawing.Size(65, 30);
             this.btnInvert.TabIndex = 10;
             this.btnInvert.Text = "Invert";
             this.btnInvert.UseVisualStyleBackColor = true;
@@ -1409,9 +1432,9 @@
             // btnSetAll
             // 
             this.btnSetAll.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.btnSetAll.Location = new System.Drawing.Point(14, 109);
+            this.btnSetAll.Location = new System.Drawing.Point(7, 92);
             this.btnSetAll.Name = "btnSetAll";
-            this.btnSetAll.Size = new System.Drawing.Size(82, 37);
+            this.btnSetAll.Size = new System.Drawing.Size(65, 30);
             this.btnSetAll.TabIndex = 13;
             this.btnSetAll.Text = "Set All";
             this.btnSetAll.UseVisualStyleBackColor = true;
@@ -1419,119 +1442,96 @@
             // 
             // btnShiftRight
             // 
-            this.btnShiftRight.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.btnShiftRight.Location = new System.Drawing.Point(195, 57);
+            this.btnShiftRight.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShiftRight.Location = new System.Drawing.Point(142, 56);
             this.btnShiftRight.Name = "btnShiftRight";
             this.btnShiftRight.Size = new System.Drawing.Size(51, 26);
             this.btnShiftRight.TabIndex = 14;
             this.btnShiftRight.Text = ">>";
             this.btnShiftRight.UseVisualStyleBackColor = true;
+            this.btnShiftRight.Click += new System.EventHandler(this.btnShiftX_Click);
             // 
             // btnShiftLeft
             // 
-            this.btnShiftLeft.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.btnShiftLeft.Location = new System.Drawing.Point(252, 56);
+            this.btnShiftLeft.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShiftLeft.Location = new System.Drawing.Point(200, 56);
             this.btnShiftLeft.Name = "btnShiftLeft";
             this.btnShiftLeft.Size = new System.Drawing.Size(51, 26);
             this.btnShiftLeft.TabIndex = 15;
             this.btnShiftLeft.Text = "<<";
             this.btnShiftLeft.UseVisualStyleBackColor = true;
+            this.btnShiftLeft.Click += new System.EventHandler(this.btnShiftX_Click);
             // 
             // btnAnd
             // 
-            this.btnAnd.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.btnAnd.Location = new System.Drawing.Point(81, 57);
+            this.btnAnd.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnd.Location = new System.Drawing.Point(137, 57);
             this.btnAnd.Name = "btnAnd";
-            this.btnAnd.Size = new System.Drawing.Size(51, 26);
+            this.btnAnd.Size = new System.Drawing.Size(48, 26);
             this.btnAnd.TabIndex = 17;
             this.btnAnd.Text = "&&";
             this.btnAnd.UseVisualStyleBackColor = true;
+            this.btnAnd.Click += new System.EventHandler(this.btnAnd_Click);
             // 
             // btnOr
             // 
-            this.btnOr.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.btnOr.Location = new System.Drawing.Point(24, 57);
+            this.btnOr.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOr.Location = new System.Drawing.Point(82, 56);
             this.btnOr.Name = "btnOr";
-            this.btnOr.Size = new System.Drawing.Size(51, 26);
+            this.btnOr.Size = new System.Drawing.Size(48, 26);
             this.btnOr.TabIndex = 16;
             this.btnOr.Text = "|";
             this.btnOr.UseVisualStyleBackColor = true;
+            this.btnOr.Click += new System.EventHandler(this.btnOr_Click);
             // 
             // btnXor
             // 
-            this.btnXor.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.btnXor.Location = new System.Drawing.Point(138, 57);
+            this.btnXor.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXor.Location = new System.Drawing.Point(193, 56);
             this.btnXor.Name = "btnXor";
-            this.btnXor.Size = new System.Drawing.Size(51, 26);
+            this.btnXor.Size = new System.Drawing.Size(48, 26);
             this.btnXor.TabIndex = 18;
             this.btnXor.Text = "^";
             this.btnXor.UseVisualStyleBackColor = true;
+            this.btnXor.Click += new System.EventHandler(this.btnXor_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnInvert);
             this.groupBox1.Controls.Add(this.btnResetAll);
             this.groupBox1.Controls.Add(this.btnSetAll);
-            this.groupBox1.Location = new System.Drawing.Point(12, 214);
+            this.groupBox1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(12, 211);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(112, 160);
+            this.groupBox1.Size = new System.Drawing.Size(80, 132);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Controls";
+            this.groupBox1.Text = "Control";
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.tbOutput);
+            this.groupBox2.Controls.Add(this.tbOutputLogical);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.tbInput);
-            this.groupBox2.Controls.Add(this.btnShiftRight);
-            this.groupBox2.Controls.Add(this.btnShiftLeft);
+            this.groupBox2.Controls.Add(this.tbInputLogical);
             this.groupBox2.Controls.Add(this.btnXor);
             this.groupBox2.Controls.Add(this.btnOr);
             this.groupBox2.Controls.Add(this.btnAnd);
-            this.groupBox2.Location = new System.Drawing.Point(130, 214);
+            this.groupBox2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(96, 211);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(317, 160);
+            this.groupBox2.Size = new System.Drawing.Size(248, 132);
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Operations";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(68, 26);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 19);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "0x";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 26);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 19);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "Input";
-            // 
-            // tbInput
-            // 
-            this.tbInput.Location = new System.Drawing.Point(96, 23);
-            this.tbInput.MaxLength = 16;
-            this.tbInput.Name = "tbInput";
-            this.tbInput.Size = new System.Drawing.Size(207, 27);
-            this.tbInput.TabIndex = 19;
-            this.tbInput.TabStop = false;
-            this.tbInput.Text = "0000000000000000";
-            this.tbInput.WordWrap = false;
+            this.groupBox2.Text = "Logical Operations";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(68, 92);
+            this.label4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(56, 92);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(26, 19);
             this.label4.TabIndex = 24;
@@ -1540,28 +1540,268 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 92);
+            this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 92);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 19);
             this.label5.TabIndex = 23;
             this.label5.Text = "Output";
             // 
-            // tbOutput
+            // tbOutputLogical
             // 
-            this.tbOutput.Location = new System.Drawing.Point(96, 89);
-            this.tbOutput.MaxLength = 16;
-            this.tbOutput.Name = "tbOutput";
-            this.tbOutput.Size = new System.Drawing.Size(207, 27);
-            this.tbOutput.TabIndex = 22;
-            this.tbOutput.TabStop = false;
-            this.tbOutput.Text = "0000000000000000";
-            this.tbOutput.WordWrap = false;
+            this.tbOutputLogical.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbOutputLogical.Location = new System.Drawing.Point(82, 88);
+            this.tbOutputLogical.MaxLength = 16;
+            this.tbOutputLogical.Name = "tbOutputLogical";
+            this.tbOutputLogical.ReadOnly = true;
+            this.tbOutputLogical.Size = new System.Drawing.Size(160, 27);
+            this.tbOutputLogical.TabIndex = 22;
+            this.tbOutputLogical.TabStop = false;
+            this.tbOutputLogical.Text = "0000000000000000";
+            this.tbOutputLogical.WordWrap = false;
+            this.tbOutputLogical.TextChanged += new System.EventHandler(this.tbOutputLogical_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(56, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(26, 19);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "0x";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 19);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "Mask";
+            // 
+            // tbInputLogical
+            // 
+            this.tbInputLogical.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbInputLogical.Location = new System.Drawing.Point(82, 23);
+            this.tbInputLogical.MaxLength = 16;
+            this.tbInputLogical.Name = "tbInputLogical";
+            this.tbInputLogical.Size = new System.Drawing.Size(160, 27);
+            this.tbInputLogical.TabIndex = 19;
+            this.tbInputLogical.TabStop = false;
+            this.tbInputLogical.Text = "0000000000000000";
+            this.tbInputLogical.WordWrap = false;
+            this.tbInputLogical.TextChanged += new System.EventHandler(this.tbOperationInput_TextChanged);
+            // 
+            // tbShiftValue
+            // 
+            this.tbShiftValue.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbShiftValue.Location = new System.Drawing.Point(91, 56);
+            this.tbShiftValue.MaxLength = 2;
+            this.tbShiftValue.Name = "tbShiftValue";
+            this.tbShiftValue.Size = new System.Drawing.Size(42, 27);
+            this.tbShiftValue.TabIndex = 25;
+            this.tbShiftValue.TabStop = false;
+            this.tbShiftValue.Text = "0";
+            this.tbShiftValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbShiftValue.WordWrap = false;
+            this.tbShiftValue.TextChanged += new System.EventHandler(this.tbShiftValue_TextChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(3, 59);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(83, 19);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "Shift value";
+            // 
+            // tbMoveToResult
+            // 
+            this.tbMoveToResult.Font = new System.Drawing.Font("Tahoma", 11.25F);
+            this.tbMoveToResult.Location = new System.Drawing.Point(613, 270);
+            this.tbMoveToResult.Name = "tbMoveToResult";
+            this.tbMoveToResult.Size = new System.Drawing.Size(55, 73);
+            this.tbMoveToResult.TabIndex = 14;
+            this.tbMoveToResult.Text = "Move to Result";
+            this.tbMoveToResult.UseVisualStyleBackColor = true;
+            this.tbMoveToResult.Click += new System.EventHandler(this.tbMoveToResult_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Controls.Add(this.tbOutputShift);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.label25);
+            this.groupBox3.Controls.Add(this.tbShiftValue);
+            this.groupBox3.Controls.Add(this.label26);
+            this.groupBox3.Controls.Add(this.tbInputShift);
+            this.groupBox3.Controls.Add(this.btnShiftRight);
+            this.groupBox3.Controls.Add(this.btnShiftLeft);
+            this.groupBox3.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(349, 211);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(258, 132);
+            this.groupBox3.TabIndex = 25;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Shift Operations";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(63, 92);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(26, 19);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "0x";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(3, 92);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(58, 19);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Output";
+            // 
+            // tbOutputShift
+            // 
+            this.tbOutputShift.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbOutputShift.Location = new System.Drawing.Point(91, 88);
+            this.tbOutputShift.MaxLength = 16;
+            this.tbOutputShift.Name = "tbOutputShift";
+            this.tbOutputShift.ReadOnly = true;
+            this.tbOutputShift.Size = new System.Drawing.Size(160, 27);
+            this.tbOutputShift.TabIndex = 22;
+            this.tbOutputShift.TabStop = false;
+            this.tbOutputShift.Text = "0000000000000000";
+            this.tbOutputShift.WordWrap = false;
+            this.tbOutputShift.TextChanged += new System.EventHandler(this.tbOutputShift_TextChanged);
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(63, 26);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(26, 19);
+            this.label25.TabIndex = 21;
+            this.label25.Text = "0x";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(3, 26);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(54, 19);
+            this.label26.TabIndex = 20;
+            this.label26.Text = "Rotate";
+            // 
+            // tbInputShift
+            // 
+            this.tbInputShift.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbInputShift.Location = new System.Drawing.Point(91, 23);
+            this.tbInputShift.MaxLength = 16;
+            this.tbInputShift.Name = "tbInputShift";
+            this.tbInputShift.ReadOnly = true;
+            this.tbInputShift.Size = new System.Drawing.Size(160, 27);
+            this.tbInputShift.TabIndex = 19;
+            this.tbInputShift.TabStop = false;
+            this.tbInputShift.Text = "0000000000000000";
+            this.tbInputShift.WordWrap = false;
+            this.tbInputShift.TextChanged += new System.EventHandler(this.tbOperationInput_TextChanged);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblByte,
+            this.toolStripStatusLabel2,
+            this.lblKByte,
+            this.toolStripStatusLabel1,
+            this.lblMByte,
+            this.toolStripStatusLabel3,
+            this.lblGByte,
+            this.toolStripStatusLabel4});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 352);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(679, 22);
+            this.statusStrip1.TabIndex = 26;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // lblByte
+            // 
+            this.lblByte.Name = "lblByte";
+            this.lblByte.Size = new System.Drawing.Size(13, 17);
+            this.lblByte.Text = "0";
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(36, 17);
+            this.toolStripStatusLabel2.Text = "Byte |";
+            // 
+            // lblKByte
+            // 
+            this.lblKByte.Name = "lblKByte";
+            this.lblKByte.Size = new System.Drawing.Size(13, 17);
+            this.lblKByte.Text = "0";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(42, 17);
+            this.toolStripStatusLabel1.Text = "KByte |";
+            // 
+            // lblMByte
+            // 
+            this.lblMByte.Name = "lblMByte";
+            this.lblMByte.Size = new System.Drawing.Size(13, 17);
+            this.lblMByte.Text = "0";
+            // 
+            // toolStripStatusLabel3
+            // 
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(44, 17);
+            this.toolStripStatusLabel3.Text = "MByte |";
+            // 
+            // lblGByte
+            // 
+            this.lblGByte.Name = "lblGByte";
+            this.lblGByte.Size = new System.Drawing.Size(13, 17);
+            this.lblGByte.Text = "0";
+            // 
+            // toolStripStatusLabel4
+            // 
+            this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
+            this.toolStripStatusLabel4.Size = new System.Drawing.Size(36, 17);
+            this.toolStripStatusLabel4.Text = "GByte";
+            // 
+            // tbClear
+            // 
+            this.tbClear.Font = new System.Drawing.Font("Tahoma", 11.25F);
+            this.tbClear.Location = new System.Drawing.Point(613, 220);
+            this.tbClear.Name = "tbClear";
+            this.tbClear.Size = new System.Drawing.Size(55, 44);
+            this.tbClear.TabIndex = 27;
+            this.tbClear.Text = "Clear";
+            this.tbClear.UseVisualStyleBackColor = true;
+            this.tbClear.Click += new System.EventHandler(this.tbClear_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(679, 386);
+            this.ClientSize = new System.Drawing.Size(679, 374);
+            this.Controls.Add(this.tbClear);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.tbMoveToResult);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -1576,14 +1816,20 @@
             this.Controls.Add(this.tbDecimalPosValue);
             this.Controls.Add(this.PanelBits);
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bit Analyzer";
             this.PanelBits.ResumeLayout(false);
             this.PanelBits.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1632,10 +1878,30 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox tbOutput;
+        private System.Windows.Forms.TextBox tbOutputLogical;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tbInput;
+        private System.Windows.Forms.TextBox tbInputLogical;
+        private System.Windows.Forms.TextBox tbShiftValue;
+        private System.Windows.Forms.Button tbMoveToResult;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox tbOutputShift;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel lblByte;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.ToolStripStatusLabel lblKByte;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel lblMByte;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
+        private System.Windows.Forms.ToolStripStatusLabel lblGByte;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox tbInputShift;
+        private System.Windows.Forms.Button tbClear;
     }
 }
 

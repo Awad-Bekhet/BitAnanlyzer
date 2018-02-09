@@ -10,69 +10,22 @@ using System.Windows.Forms;
 
 namespace BitAnalyzer
 {
+    enum BitOperation
+	{
+	    LOGICAL_OPERATION,
+        SHIFT_OPERATION,
+        UNKNOWN_OPERATION
+	};
+
     public partial class Form1 : Form
     {
-        //const Byte NumberOfBits = 64;
-        //const Byte BitsPerRow = 32;
-        //private System.Windows.Forms.Label[] BitsArray = new Label[NumberOfBits];
         private bool IsHexChangeIsLastEdit = true;
-        private const UInt64 Max64Bit = 18446744073709551615;
-        private const UInt32 Max32Bit = 4294967295;
-
+        private BitOperation LastOperationSet = BitOperation.UNKNOWN_OPERATION;
+        
         public Form1()
         {
             InitializeComponent();
             InitializeBitMap();
-            /*
-            int SizeW = (this.PanelBits.Width / BitsPerRow)  + 2; 
-            int SizeH = (this.PanelBits.Height / 2) + 2; 
-
-            int PosXB = this.PanelBits.Width - SizeW;
-            int PosYB = this.PanelBits.Height - SizeH;
-
-            int PosXH = this.PanelBits.Width - SizeW;
-            int PosYH = this.PanelBits.Height - SizeH;
-
-            Color[] BitsColors = { Color.Gainsboro, Color.Silver, Color.PeachPuff, Color.LightSalmon };
-            int colorindex = -1;
-            
-            for (int Bitscounter = 0; Bitscounter < NumberOfBits; Bitscounter++)
-            {
-                BitsArray[Bitscounter] = new Label();
-
-                BitsArray[Bitscounter].BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-
-                BitsArray[Bitscounter].Location = new System.Drawing.Point(PosXB, PosYB);
-                BitsArray[Bitscounter].Size = new System.Drawing.Size(SizeW, SizeH);
-
-                if (Bitscounter % 4 == 0)
-                {
-                    colorindex++;
-                    if (colorindex == 4)
-                    {
-                        colorindex = 0;
-                    }
-                }
-                BitsArray[Bitscounter].BackColor = BitsColors[colorindex];
-
-
-                BitsArray[Bitscounter].AutoSize = false;
-                BitsArray[Bitscounter].Name = "Bit" + Bitscounter.ToString("00");
-                BitsArray[Bitscounter].Text = "0";
-                BitsArray[Bitscounter].TextAlign = ContentAlignment.MiddleCenter;
-                BitsArray[Bitscounter].TabStop = false;
-                BitsArray[Bitscounter].BringToFront();
-                BitsArray[Bitscounter].Click += new System.EventHandler(this.Bits_Click);
-
-                this.PanelBits.Controls.Add(BitsArray[Bitscounter]);
-                PosXB -= SizeW - 1;
-                if (Bitscounter == 31)
-                {
-                    PosXB = this.PanelBits.Width - SizeW;
-                    PosYB -= SizeH;
-                }
-            }
-            */
             
             foreach (var PanelControl in this.PanelBits.Controls)
             {
@@ -98,47 +51,44 @@ namespace BitAnalyzer
 
         private void BitX_Click(object sender, EventArgs e)
         {
-            Label labelSettings = sender as Label;
-            TextBox NibbleCntrl = null;
-            Byte BitNumber = Byte.Parse(labelSettings.Name.Substring(("Bit").Length));
-            Byte NibbleValue;
-
-            foreach (var Cont in this.PanelBits.Controls.OfType<TextBox>())
+            try
             {
-                if ("Nibble" + (BitNumber / 4).ToString("00") == Cont.Name)
+                Label Bit = sender as Label;
+                Byte BitNumber = Byte.Parse(Bit.Name.Substring(("Bit").Length));
+                Byte NibbleValue;
+                int NibbleIndex = BitNumber / 4;
+                UInt64 HexValue = 0;
+
+                NibbleValue = Byte.Parse(Nibble[NibbleIndex].Text, System.Globalization.NumberStyles.HexNumber);
+
+                if ("0" == Bit.Text)
                 {
-                    NibbleCntrl = Cont;
-                    break;
+                    NibbleValue += Byte.Parse((1 << (BitNumber % 4)).ToString());
+                    Bit.Text = "1";
                 }
+                else
+                {
+                    NibbleValue -= Byte.Parse((1 << (BitNumber % 4)).ToString());
+                    Bit.Text = "0";
+                }
+
+                Nibble[NibbleIndex].Text = NibbleValue.ToString("X1");
+
+                foreach (var Cont in this.PanelBits.Controls.OfType<TextBox>())
+                {
+                    HexValue += UInt64.Parse(Cont.Text, System.Globalization.NumberStyles.HexNumber) <<
+                            (Byte.Parse(Cont.Name.Substring(("Nibble").Length)) * 4);
+                }
+
+                tbHexValue.Text = HexValue.ToString("X16");
+                tbDecimalPosValue.Text = HexValue.ToString();
+                tbDecimalNegValue.Text = ((Int64)UInt64.Parse(tbDecimalPosValue.Text)).ToString();
+                tbOctalValue.Text = ToOctal(Convert.ToUInt64(tbDecimalPosValue.Text));
             }
-            
-            NibbleValue = Byte.Parse(NibbleCntrl.Text, System.Globalization.NumberStyles.HexNumber);
-            
-            if("0" == labelSettings.Text)
+            catch (Exception ex)
             {
-                NibbleValue += Byte.Parse((1 << (BitNumber % 4)).ToString());
-                labelSettings.Text = "1";
+                MessageBox.Show(this, ex.Message, "Unhandled Exception");
             }
-            else
-            {
-                NibbleValue -= Byte.Parse((1 << (BitNumber % 4)).ToString());
-                labelSettings.Text = "0";
-            }
-
-            NibbleCntrl.Text = NibbleValue.ToString("X1");
-
-            UInt64 HexValue = 0;
-
-            foreach (var Cont in this.PanelBits.Controls.OfType<TextBox>())
-            {
-                HexValue += UInt64.Parse(Cont.Text, System.Globalization.NumberStyles.HexNumber) <<
-                        (Byte.Parse(Cont.Name.Substring(("Nibble").Length)) * 4);
-            }
-
-            tbHexValue.Text = HexValue.ToString("X16");
-            tbDecimalPosValue.Text = HexValue.ToString();
-            tbDecimalNegValue.Text = ((Int64)UInt64.Parse(tbDecimalPosValue.Text)).ToString();
-            tbOctalValue.Text = ToOctal(Convert.ToUInt64(tbDecimalPosValue.Text));
         }
 
         private void tbXValue_TextChanged(object sender, EventArgs e)
@@ -171,12 +121,31 @@ namespace BitAnalyzer
                 {
                     try
                     {
-                        UInt64.Parse(TextBoxSetting.Text, style);
+                        UInt64 NumberOfBytes = UInt64.Parse(TextBoxSetting.Text, style);
+                        Decimal KByte       = Decimal.Parse(NumberOfBytes.ToString()) / 1024;
+                        Decimal KByteRem    = Math.Truncate((KByte - Math.Truncate(KByte)) * 1000);
+                        Decimal MByte       = KByte / 1024;
+                        Decimal MByteRem    = Math.Truncate((MByte - Math.Truncate(MByte)) * 1000);
+                        Decimal GByte       = MByte / 1024;
+                        Decimal GByteRem    = Math.Truncate((GByte - Math.Truncate(GByte)) * 1000);
+
+                        lblByte.Text = NumberOfBytes.ToString();
+                        lblKByte.Text = Math.Truncate(KByte).ToString("0") + "." + KByteRem.ToString("000");
+                        lblMByte.Text = Math.Truncate(MByte).ToString("0") + "." + MByteRem.ToString("000");
+                        lblGByte.Text = Math.Truncate(GByte).ToString("0") + "." + GByteRem.ToString("000");
+                    }
+                    catch (OverflowException ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        if (ex.Message.Contains("or too small for a UInt64"))
+                        {
+                            MessageBox.Show("Value is out of 64Bit range.", "Out Of Range", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            TrimLastDigit = true;
+                        }
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Value is out of 64Bit range.", "Out Of Range", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        TrimLastDigit = true;
+                        MessageBox.Show(this, ex.Message, "Unhandled Exception");
                     }
                 }
 
@@ -314,6 +283,148 @@ namespace BitAnalyzer
             Object obj = new Object();
             EventArgs arg = new EventArgs();
             btnApply_Click(obj, arg);
+        }
+
+        private void btnOr_Click(object sender, EventArgs e)
+        {
+            tbOutputLogical.Text = 
+            (
+                UInt64.Parse(tbHexValue.Text, System.Globalization.NumberStyles.HexNumber) |
+                UInt64.Parse(tbInputLogical.Text, System.Globalization.NumberStyles.HexNumber)
+            ).ToString("X16");
+        }
+
+        private void btnAnd_Click(object sender, EventArgs e)
+        {
+            tbOutputLogical.Text =
+            (
+                UInt64.Parse(tbHexValue.Text, System.Globalization.NumberStyles.HexNumber) &
+                UInt64.Parse(tbInputLogical.Text, System.Globalization.NumberStyles.HexNumber)
+            ).ToString("X16");
+        }
+
+        private void btnXor_Click(object sender, EventArgs e)
+        {
+            tbOutputLogical.Text =
+            (
+                UInt64.Parse(tbHexValue.Text, System.Globalization.NumberStyles.HexNumber) ^
+                UInt64.Parse(tbInputLogical.Text, System.Globalization.NumberStyles.HexNumber)
+            ).ToString("X16");
+        }
+
+        private void btnShiftX_Click(object sender, EventArgs e)
+        {
+            Button ShiftBtn = sender as Button;
+            int PlaceToShift = int.Parse(tbShiftValue.Text);
+            UInt64 Value;
+
+            if (0 == UInt64.Parse(tbOutputShift.Text, System.Globalization.NumberStyles.HexNumber))
+            {
+                /*Get initial value*/
+                tbOutputShift.Text = tbHexValue.Text;
+            }
+
+            Value = UInt64.Parse(tbOutputShift.Text, System.Globalization.NumberStyles.HexNumber);
+            
+            if (ShiftBtn.Name.Equals("btnShiftRight"))
+            {
+                Value >>= PlaceToShift;
+            }
+            else if(ShiftBtn.Name.Equals("btnShiftLeft"))
+            {
+                Value <<= PlaceToShift;
+            }
+            tbOutputShift.Text = Value.ToString("X16");
+        }
+
+        private void tbMoveToResult_Click(object sender, EventArgs e)
+        {
+            switch (LastOperationSet)
+            {
+                case BitOperation.LOGICAL_OPERATION:
+                    tbHexValue.Text = tbOutputLogical.Text;
+                    break;
+                case BitOperation.SHIFT_OPERATION:
+                    tbHexValue.Text = tbOutputShift.Text;
+                    break;
+                case BitOperation.UNKNOWN_OPERATION:
+                    break;
+            }
+            Object obj = new Object();
+            EventArgs arg = new EventArgs();
+            btnApply_Click(obj, arg);
+        }
+
+        private void tbOutputLogical_TextChanged(object sender, EventArgs e)
+        {
+            LastOperationSet = BitOperation.LOGICAL_OPERATION;
+        }
+
+        private void tbOutputShift_TextChanged(object sender, EventArgs e)
+        {
+            LastOperationSet = BitOperation.SHIFT_OPERATION;
+        }
+
+        private void tbOperationInput_TextChanged(object sender, EventArgs e)
+        {
+            TextBox TextBoxInput = sender as TextBox;
+            String regexPattern = @"\A\b[0-9a-fA-F]+\b\Z";
+            if (false == String.IsNullOrEmpty(TextBoxInput.Text))
+            {
+                bool TrimLastDigit = false;
+                if (false == System.Text.RegularExpressions.Regex.IsMatch(TextBoxInput.Text, regexPattern))
+                {
+                    MessageBox.Show("Only allowed characters could be used.", "Invalid Character", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    TrimLastDigit = true;
+                }
+
+                if (true == TrimLastDigit)
+                {
+                    TextBoxInput.Text = TextBoxInput.Text.Remove(TextBoxInput.Text.Length - 1);
+                    TextBoxInput.SelectionStart = TextBoxInput.Text.Length;
+                    TextBoxInput.SelectionLength = 0;
+                }
+            }
+        }
+
+        private void tbShiftValue_TextChanged(object sender, EventArgs e)
+        {
+            TextBox TextBoxInput = sender as TextBox;
+            String regexPattern = @"\A\b[0-9]+\b\Z";
+            if (false == String.IsNullOrEmpty(TextBoxInput.Text))
+            {
+                bool TrimLastDigit = false;
+                if (false == System.Text.RegularExpressions.Regex.IsMatch(TextBoxInput.Text, regexPattern))
+                {
+                    MessageBox.Show("Only allowed characters could be used.", "Invalid Character", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    TrimLastDigit = true;
+                }
+                else
+                {
+                    if (int.Parse(TextBoxInput.Text) > 64)
+                    {
+                        MessageBox.Show("Value must be (<= 64).", "Invalid Value", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        TrimLastDigit = true;
+                    }
+                }
+
+                if (true == TrimLastDigit)
+                {
+                    TextBoxInput.Text = TextBoxInput.Text.Remove(TextBoxInput.Text.Length - 1);
+                    TextBoxInput.SelectionStart = TextBoxInput.Text.Length;
+                    TextBoxInput.SelectionLength = 0;
+                }
+            }
+        }
+
+        private void tbClear_Click(object sender, EventArgs e)
+        {
+            tbInputLogical.Text = (0).ToString("X16");
+            tbOutputLogical.Text = (0).ToString("X16");
+            tbInputShift.Text = (0).ToString("X16");
+            tbOutputShift.Text = (0).ToString("X16");
+            tbShiftValue.Text = "0";
+            LastOperationSet = BitOperation.UNKNOWN_OPERATION;
         }
     }
 }
