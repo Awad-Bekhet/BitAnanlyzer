@@ -47,6 +47,8 @@ namespace BitAnalyzer
                         break;
 	            }
             }
+            /*Make 32Bit as default*/
+            rb32BitMode.Checked = true;
         }
 
         private void BitX_Click(object sender, EventArgs e)
@@ -159,7 +161,6 @@ namespace BitAnalyzer
                     }
                     catch (OverflowException ex)
                     {
-                        MessageBox.Show(ex.Message);
                         if (ex.Message.Contains("or too small for a UInt"))
                         {
                             MessageBox.Show("Value is out of range of selected mode (32/64).", "Out Of Range", MessageBoxButtons.OK, MessageBoxIcon.Error);

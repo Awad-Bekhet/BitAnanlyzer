@@ -1032,6 +1032,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tbDecimalPosValue = new System.Windows.Forms.TextBox();
             this.tbHexValue = new System.Windows.Forms.TextBox();
             this.lblHex = new System.Windows.Forms.Label();
@@ -1095,6 +1096,7 @@
             this.groupBox2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.PanelBits.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbDecimalPosValue
@@ -1707,30 +1709,43 @@
             // rb32BitMode
             // 
             this.rb32BitMode.AutoSize = true;
-            this.rb32BitMode.Location = new System.Drawing.Point(540, 260);
+            this.rb32BitMode.BackColor = System.Drawing.Color.Transparent;
+            this.rb32BitMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rb32BitMode.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb32BitMode.ForeColor = System.Drawing.Color.Red;
+            this.rb32BitMode.Location = new System.Drawing.Point(1, 15);
             this.rb32BitMode.Name = "rb32BitMode";
-            this.rb32BitMode.Size = new System.Drawing.Size(69, 23);
+            this.rb32BitMode.Size = new System.Drawing.Size(36, 23);
             this.rb32BitMode.TabIndex = 27;
-            this.rb32BitMode.Text = "32-Bit";
-            this.rb32BitMode.UseVisualStyleBackColor = true;
+            this.rb32BitMode.Text = "_";
+            this.rb32BitMode.UseVisualStyleBackColor = false;
             this.rb32BitMode.CheckedChanged += new System.EventHandler(this.rbMode_CheckedChanged);
             // 
             // rb64BitMode
             // 
             this.rb64BitMode.AutoSize = true;
+            this.rb64BitMode.BackColor = System.Drawing.Color.Transparent;
+            this.rb64BitMode.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.rb64BitMode.Checked = true;
             this.rb64BitMode.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.rb64BitMode.Location = new System.Drawing.Point(540, 231);
+            this.rb64BitMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rb64BitMode.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rb64BitMode.ForeColor = System.Drawing.Color.Red;
+            this.rb64BitMode.Location = new System.Drawing.Point(63, 70);
             this.rb64BitMode.Name = "rb64BitMode";
-            this.rb64BitMode.Size = new System.Drawing.Size(69, 23);
+            this.rb64BitMode.Size = new System.Drawing.Size(56, 23);
             this.rb64BitMode.TabIndex = 28;
             this.rb64BitMode.TabStop = true;
-            this.rb64BitMode.Text = "64-Bit";
-            this.rb64BitMode.UseVisualStyleBackColor = true;
+            this.rb64BitMode.Text = "___";
+            this.rb64BitMode.UseVisualStyleBackColor = false;
             this.rb64BitMode.CheckedChanged += new System.EventHandler(this.rbMode_CheckedChanged);
             // 
             // panel1
             // 
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.rb32BitMode);
+            this.panel1.Controls.Add(this.rb64BitMode);
             this.panel1.Location = new System.Drawing.Point(537, 220);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(131, 123);
@@ -1741,8 +1756,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 374);
-            this.Controls.Add(this.rb64BitMode);
-            this.Controls.Add(this.rb32BitMode);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -1773,6 +1786,8 @@
             this.statusStrip1.PerformLayout();
             this.PanelBits.ResumeLayout(false);
             this.PanelBits.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
