@@ -1,8 +1,0 @@
-C:\Users\AwadBekhet\Documents\Visual Studio 2012\Projects\BitAnalyzer\BitAnalyzer\bin\Debug\BitAnalyzer.exe.config
-C:\Users\AwadBekhet\Documents\Visual Studio 2012\Projects\BitAnalyzer\BitAnalyzer\bin\Debug\BitAnalyzer.exe
-C:\Users\AwadBekhet\Documents\Visual Studio 2012\Projects\BitAnalyzer\BitAnalyzer\bin\Debug\BitAnalyzer.pdb
-C:\Users\AwadBekhet\Documents\Visual Studio 2012\Projects\BitAnalyzer\BitAnalyzer\obj\Debug\BitAnalyzer.Form1.resources
-C:\Users\AwadBekhet\Documents\Visual Studio 2012\Projects\BitAnalyzer\BitAnalyzer\obj\Debug\BitAnalyzer.Properties.Resources.resources
-C:\Users\AwadBekhet\Documents\Visual Studio 2012\Projects\BitAnalyzer\BitAnalyzer\obj\Debug\BitAnalyzer.csproj.GenerateResource.Cache
-C:\Users\AwadBekhet\Documents\Visual Studio 2012\Projects\BitAnalyzer\BitAnalyzer\obj\Debug\BitAnalyzer.exe
-C:\Users\AwadBekhet\Documents\Visual Studio 2012\Projects\BitAnalyzer\BitAnalyzer\obj\Debug\BitAnalyzer.pdb

@@ -1032,23 +1032,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.PanelBits = new System.Windows.Forms.Panel();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.tbDecimalPosValue = new System.Windows.Forms.TextBox();
             this.tbHexValue = new System.Windows.Forms.TextBox();
             this.lblHex = new System.Windows.Forms.Label();
@@ -1062,29 +1045,23 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tbDecimalNegValue = new System.Windows.Forms.TextBox();
             this.btnSetAll = new System.Windows.Forms.Button();
-            this.btnShiftRight = new System.Windows.Forms.Button();
-            this.btnShiftLeft = new System.Windows.Forms.Button();
             this.btnAnd = new System.Windows.Forms.Button();
             this.btnOr = new System.Windows.Forms.Button();
             this.btnXor = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.tbClear = new System.Windows.Forms.Button();
+            this.tbMoveToResult = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tbShiftValue = new System.Windows.Forms.TextBox();
+            this.btnShiftRight = new System.Windows.Forms.Button();
+            this.btnShiftLeft = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.tbOutputLogical = new System.Windows.Forms.TextBox();
+            this.tbOutput = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.tbInputLogical = new System.Windows.Forms.TextBox();
-            this.tbShiftValue = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.tbMoveToResult = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.tbOutputShift = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.tbInputShift = new System.Windows.Forms.TextBox();
+            this.tbInputMask = new System.Windows.Forms.TextBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.lblByte = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -1094,215 +1071,30 @@
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblGByte = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tbClear = new System.Windows.Forms.Button();
-            this.PanelBits.SuspendLayout();
+            this.rb32BitMode = new System.Windows.Forms.RadioButton();
+            this.rb64BitMode = new System.Windows.Forms.RadioButton();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.PanelBits = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            this.PanelBits.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // PanelBits
-            // 
-            this.PanelBits.BackColor = System.Drawing.Color.White;
-            this.PanelBits.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.PanelBits.Controls.Add(this.label17);
-            this.PanelBits.Controls.Add(this.label18);
-            this.PanelBits.Controls.Add(this.label19);
-            this.PanelBits.Controls.Add(this.label20);
-            this.PanelBits.Controls.Add(this.label21);
-            this.PanelBits.Controls.Add(this.label22);
-            this.PanelBits.Controls.Add(this.label23);
-            this.PanelBits.Controls.Add(this.label24);
-            this.PanelBits.Controls.Add(this.label16);
-            this.PanelBits.Controls.Add(this.label15);
-            this.PanelBits.Controls.Add(this.label14);
-            this.PanelBits.Controls.Add(this.label13);
-            this.PanelBits.Controls.Add(this.label12);
-            this.PanelBits.Controls.Add(this.label11);
-            this.PanelBits.Controls.Add(this.label10);
-            this.PanelBits.Controls.Add(this.label9);
-            this.PanelBits.Location = new System.Drawing.Point(12, 13);
-            this.PanelBits.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.PanelBits.Name = "PanelBits";
-            this.PanelBits.Size = new System.Drawing.Size(656, 117);
-            this.PanelBits.TabIndex = 0;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label17.Location = new System.Drawing.Point(1, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(19, 13);
-            this.label17.TabIndex = 140;
-            this.label17.Text = "63";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label18.Location = new System.Drawing.Point(163, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(19, 13);
-            this.label18.TabIndex = 139;
-            this.label18.Text = "55";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label19.Location = new System.Drawing.Point(326, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(19, 13);
-            this.label19.TabIndex = 138;
-            this.label19.Text = "47";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label20.Location = new System.Drawing.Point(490, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(19, 13);
-            this.label20.TabIndex = 137;
-            this.label20.Text = "39";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label21.Location = new System.Drawing.Point(142, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(19, 13);
-            this.label21.TabIndex = 136;
-            this.label21.Text = "56";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label22.Location = new System.Drawing.Point(304, 0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(19, 13);
-            this.label22.TabIndex = 135;
-            this.label22.Text = "48";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label23.Location = new System.Drawing.Point(467, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(19, 13);
-            this.label23.TabIndex = 134;
-            this.label23.Text = "40";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label24.Location = new System.Drawing.Point(630, 0);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(19, 13);
-            this.label24.TabIndex = 133;
-            this.label24.Text = "32";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label16.Location = new System.Drawing.Point(0, 57);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(19, 13);
-            this.label16.TabIndex = 92;
-            this.label16.Text = "31";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label15.Location = new System.Drawing.Point(162, 57);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(19, 13);
-            this.label15.TabIndex = 91;
-            this.label15.Text = "23";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label14.Location = new System.Drawing.Point(325, 57);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(19, 13);
-            this.label14.TabIndex = 90;
-            this.label14.Text = "15";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label13.Location = new System.Drawing.Point(489, 57);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(13, 13);
-            this.label13.TabIndex = 89;
-            this.label13.Text = "7";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label12.Location = new System.Drawing.Point(141, 57);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(19, 13);
-            this.label12.TabIndex = 88;
-            this.label12.Text = "24";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label11.Location = new System.Drawing.Point(303, 57);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(19, 13);
-            this.label11.TabIndex = 87;
-            this.label11.Text = "16";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label10.Location = new System.Drawing.Point(473, 57);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(13, 13);
-            this.label10.TabIndex = 86;
-            this.label10.Text = "8";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label9.Location = new System.Drawing.Point(635, 57);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(13, 13);
-            this.label9.TabIndex = 85;
-            this.label9.Text = "0";
             // 
             // tbDecimalPosValue
             // 
@@ -1363,7 +1155,7 @@
             this.btnResetAll.Font = new System.Drawing.Font("Tahoma", 12F);
             this.btnResetAll.Location = new System.Drawing.Point(7, 56);
             this.btnResetAll.Name = "btnResetAll";
-            this.btnResetAll.Size = new System.Drawing.Size(65, 30);
+            this.btnResetAll.Size = new System.Drawing.Size(77, 30);
             this.btnResetAll.TabIndex = 6;
             this.btnResetAll.Text = "Reset All";
             this.btnResetAll.UseVisualStyleBackColor = true;
@@ -1403,7 +1195,7 @@
             this.btnInvert.Font = new System.Drawing.Font("Tahoma", 12F);
             this.btnInvert.Location = new System.Drawing.Point(7, 20);
             this.btnInvert.Name = "btnInvert";
-            this.btnInvert.Size = new System.Drawing.Size(65, 30);
+            this.btnInvert.Size = new System.Drawing.Size(77, 30);
             this.btnInvert.TabIndex = 10;
             this.btnInvert.Text = "Invert";
             this.btnInvert.UseVisualStyleBackColor = true;
@@ -1434,40 +1226,18 @@
             this.btnSetAll.Font = new System.Drawing.Font("Tahoma", 12F);
             this.btnSetAll.Location = new System.Drawing.Point(7, 92);
             this.btnSetAll.Name = "btnSetAll";
-            this.btnSetAll.Size = new System.Drawing.Size(65, 30);
+            this.btnSetAll.Size = new System.Drawing.Size(77, 30);
             this.btnSetAll.TabIndex = 13;
             this.btnSetAll.Text = "Set All";
             this.btnSetAll.UseVisualStyleBackColor = true;
             this.btnSetAll.Click += new System.EventHandler(this.btnSetAll_Click);
             // 
-            // btnShiftRight
-            // 
-            this.btnShiftRight.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShiftRight.Location = new System.Drawing.Point(142, 56);
-            this.btnShiftRight.Name = "btnShiftRight";
-            this.btnShiftRight.Size = new System.Drawing.Size(51, 26);
-            this.btnShiftRight.TabIndex = 14;
-            this.btnShiftRight.Text = ">>";
-            this.btnShiftRight.UseVisualStyleBackColor = true;
-            this.btnShiftRight.Click += new System.EventHandler(this.btnShiftX_Click);
-            // 
-            // btnShiftLeft
-            // 
-            this.btnShiftLeft.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShiftLeft.Location = new System.Drawing.Point(200, 56);
-            this.btnShiftLeft.Name = "btnShiftLeft";
-            this.btnShiftLeft.Size = new System.Drawing.Size(51, 26);
-            this.btnShiftLeft.TabIndex = 15;
-            this.btnShiftLeft.Text = "<<";
-            this.btnShiftLeft.UseVisualStyleBackColor = true;
-            this.btnShiftLeft.Click += new System.EventHandler(this.btnShiftX_Click);
-            // 
             // btnAnd
             // 
             this.btnAnd.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnd.Location = new System.Drawing.Point(137, 57);
+            this.btnAnd.Location = new System.Drawing.Point(134, 56);
             this.btnAnd.Name = "btnAnd";
-            this.btnAnd.Size = new System.Drawing.Size(48, 26);
+            this.btnAnd.Size = new System.Drawing.Size(42, 26);
             this.btnAnd.TabIndex = 17;
             this.btnAnd.Text = "&&";
             this.btnAnd.UseVisualStyleBackColor = true;
@@ -1476,9 +1246,9 @@
             // btnOr
             // 
             this.btnOr.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOr.Location = new System.Drawing.Point(82, 56);
+            this.btnOr.Location = new System.Drawing.Point(86, 56);
             this.btnOr.Name = "btnOr";
-            this.btnOr.Size = new System.Drawing.Size(48, 26);
+            this.btnOr.Size = new System.Drawing.Size(42, 26);
             this.btnOr.TabIndex = 16;
             this.btnOr.Text = "|";
             this.btnOr.UseVisualStyleBackColor = true;
@@ -1487,9 +1257,9 @@
             // btnXor
             // 
             this.btnXor.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXor.Location = new System.Drawing.Point(193, 56);
+            this.btnXor.Location = new System.Drawing.Point(182, 56);
             this.btnXor.Name = "btnXor";
-            this.btnXor.Size = new System.Drawing.Size(48, 26);
+            this.btnXor.Size = new System.Drawing.Size(42, 26);
             this.btnXor.TabIndex = 18;
             this.btnXor.Text = "^";
             this.btnXor.UseVisualStyleBackColor = true;
@@ -1503,35 +1273,108 @@
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 211);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(80, 132);
+            this.groupBox1.Size = new System.Drawing.Size(90, 132);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Control";
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.tbClear);
+            this.groupBox2.Controls.Add(this.tbMoveToResult);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.tbShiftValue);
+            this.groupBox2.Controls.Add(this.btnShiftRight);
+            this.groupBox2.Controls.Add(this.btnShiftLeft);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.tbOutputLogical);
+            this.groupBox2.Controls.Add(this.tbOutput);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.tbInputLogical);
+            this.groupBox2.Controls.Add(this.tbInputMask);
             this.groupBox2.Controls.Add(this.btnXor);
             this.groupBox2.Controls.Add(this.btnOr);
             this.groupBox2.Controls.Add(this.btnAnd);
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(96, 211);
+            this.groupBox2.Location = new System.Drawing.Point(114, 211);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(248, 132);
+            this.groupBox2.Size = new System.Drawing.Size(409, 132);
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Logical Operations";
+            this.groupBox2.Text = "Bitwise Operations";
+            // 
+            // tbClear
+            // 
+            this.tbClear.Font = new System.Drawing.Font("Tahoma", 11.25F);
+            this.tbClear.Location = new System.Drawing.Point(334, 56);
+            this.tbClear.Name = "tbClear";
+            this.tbClear.Size = new System.Drawing.Size(64, 26);
+            this.tbClear.TabIndex = 27;
+            this.tbClear.Text = "Clear";
+            this.tbClear.UseVisualStyleBackColor = true;
+            this.tbClear.Click += new System.EventHandler(this.tbClear_Click);
+            // 
+            // tbMoveToResult
+            // 
+            this.tbMoveToResult.Font = new System.Drawing.Font("Tahoma", 11.25F);
+            this.tbMoveToResult.Location = new System.Drawing.Point(260, 88);
+            this.tbMoveToResult.Name = "tbMoveToResult";
+            this.tbMoveToResult.Size = new System.Drawing.Size(138, 26);
+            this.tbMoveToResult.TabIndex = 14;
+            this.tbMoveToResult.Text = "Move OP to Result";
+            this.tbMoveToResult.UseVisualStyleBackColor = true;
+            this.tbMoveToResult.Click += new System.EventHandler(this.tbMoveToResult_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(268, 26);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(83, 19);
+            this.label6.TabIndex = 30;
+            this.label6.Text = "Shift value";
+            // 
+            // tbShiftValue
+            // 
+            this.tbShiftValue.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbShiftValue.Location = new System.Drawing.Point(356, 23);
+            this.tbShiftValue.MaxLength = 2;
+            this.tbShiftValue.Name = "tbShiftValue";
+            this.tbShiftValue.Size = new System.Drawing.Size(42, 27);
+            this.tbShiftValue.TabIndex = 29;
+            this.tbShiftValue.TabStop = false;
+            this.tbShiftValue.Text = "0";
+            this.tbShiftValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbShiftValue.WordWrap = false;
+            // 
+            // btnShiftRight
+            // 
+            this.btnShiftRight.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShiftRight.Location = new System.Drawing.Point(278, 56);
+            this.btnShiftRight.Name = "btnShiftRight";
+            this.btnShiftRight.Size = new System.Drawing.Size(42, 26);
+            this.btnShiftRight.TabIndex = 27;
+            this.btnShiftRight.Text = ">>";
+            this.btnShiftRight.UseVisualStyleBackColor = true;
+            this.btnShiftRight.Click += new System.EventHandler(this.btnShiftX_Click);
+            // 
+            // btnShiftLeft
+            // 
+            this.btnShiftLeft.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShiftLeft.Location = new System.Drawing.Point(230, 56);
+            this.btnShiftLeft.Name = "btnShiftLeft";
+            this.btnShiftLeft.Size = new System.Drawing.Size(42, 26);
+            this.btnShiftLeft.TabIndex = 28;
+            this.btnShiftLeft.Text = "<<";
+            this.btnShiftLeft.UseVisualStyleBackColor = true;
+            this.btnShiftLeft.Click += new System.EventHandler(this.btnShiftX_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(56, 92);
+            this.label4.Location = new System.Drawing.Point(60, 92);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(26, 19);
             this.label4.TabIndex = 24;
@@ -1547,25 +1390,24 @@
             this.label5.TabIndex = 23;
             this.label5.Text = "Output";
             // 
-            // tbOutputLogical
+            // tbOutput
             // 
-            this.tbOutputLogical.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbOutputLogical.Location = new System.Drawing.Point(82, 88);
-            this.tbOutputLogical.MaxLength = 16;
-            this.tbOutputLogical.Name = "tbOutputLogical";
-            this.tbOutputLogical.ReadOnly = true;
-            this.tbOutputLogical.Size = new System.Drawing.Size(160, 27);
-            this.tbOutputLogical.TabIndex = 22;
-            this.tbOutputLogical.TabStop = false;
-            this.tbOutputLogical.Text = "0000000000000000";
-            this.tbOutputLogical.WordWrap = false;
-            this.tbOutputLogical.TextChanged += new System.EventHandler(this.tbOutputLogical_TextChanged);
+            this.tbOutput.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbOutput.Location = new System.Drawing.Point(86, 88);
+            this.tbOutput.MaxLength = 16;
+            this.tbOutput.Name = "tbOutput";
+            this.tbOutput.ReadOnly = true;
+            this.tbOutput.Size = new System.Drawing.Size(160, 27);
+            this.tbOutput.TabIndex = 22;
+            this.tbOutput.TabStop = false;
+            this.tbOutput.Text = "0000000000000000";
+            this.tbOutput.WordWrap = false;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(56, 26);
+            this.label2.Location = new System.Drawing.Point(60, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(26, 19);
             this.label2.TabIndex = 21;
@@ -1581,141 +1423,18 @@
             this.label3.TabIndex = 20;
             this.label3.Text = "Mask";
             // 
-            // tbInputLogical
+            // tbInputMask
             // 
-            this.tbInputLogical.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbInputLogical.Location = new System.Drawing.Point(82, 23);
-            this.tbInputLogical.MaxLength = 16;
-            this.tbInputLogical.Name = "tbInputLogical";
-            this.tbInputLogical.Size = new System.Drawing.Size(160, 27);
-            this.tbInputLogical.TabIndex = 19;
-            this.tbInputLogical.TabStop = false;
-            this.tbInputLogical.Text = "0000000000000000";
-            this.tbInputLogical.WordWrap = false;
-            this.tbInputLogical.TextChanged += new System.EventHandler(this.tbOperationInput_TextChanged);
-            // 
-            // tbShiftValue
-            // 
-            this.tbShiftValue.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbShiftValue.Location = new System.Drawing.Point(91, 56);
-            this.tbShiftValue.MaxLength = 2;
-            this.tbShiftValue.Name = "tbShiftValue";
-            this.tbShiftValue.Size = new System.Drawing.Size(42, 27);
-            this.tbShiftValue.TabIndex = 25;
-            this.tbShiftValue.TabStop = false;
-            this.tbShiftValue.Text = "0";
-            this.tbShiftValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbShiftValue.WordWrap = false;
-            this.tbShiftValue.TextChanged += new System.EventHandler(this.tbShiftValue_TextChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 59);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 19);
-            this.label6.TabIndex = 26;
-            this.label6.Text = "Shift value";
-            // 
-            // tbMoveToResult
-            // 
-            this.tbMoveToResult.Font = new System.Drawing.Font("Tahoma", 11.25F);
-            this.tbMoveToResult.Location = new System.Drawing.Point(613, 270);
-            this.tbMoveToResult.Name = "tbMoveToResult";
-            this.tbMoveToResult.Size = new System.Drawing.Size(55, 73);
-            this.tbMoveToResult.TabIndex = 14;
-            this.tbMoveToResult.Text = "Move to Result";
-            this.tbMoveToResult.UseVisualStyleBackColor = true;
-            this.tbMoveToResult.Click += new System.EventHandler(this.tbMoveToResult_Click);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.tbOutputShift);
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.label25);
-            this.groupBox3.Controls.Add(this.tbShiftValue);
-            this.groupBox3.Controls.Add(this.label26);
-            this.groupBox3.Controls.Add(this.tbInputShift);
-            this.groupBox3.Controls.Add(this.btnShiftRight);
-            this.groupBox3.Controls.Add(this.btnShiftLeft);
-            this.groupBox3.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(349, 211);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(258, 132);
-            this.groupBox3.TabIndex = 25;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Shift Operations";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(63, 92);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(26, 19);
-            this.label7.TabIndex = 24;
-            this.label7.Text = "0x";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(3, 92);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(58, 19);
-            this.label8.TabIndex = 23;
-            this.label8.Text = "Output";
-            // 
-            // tbOutputShift
-            // 
-            this.tbOutputShift.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbOutputShift.Location = new System.Drawing.Point(91, 88);
-            this.tbOutputShift.MaxLength = 16;
-            this.tbOutputShift.Name = "tbOutputShift";
-            this.tbOutputShift.ReadOnly = true;
-            this.tbOutputShift.Size = new System.Drawing.Size(160, 27);
-            this.tbOutputShift.TabIndex = 22;
-            this.tbOutputShift.TabStop = false;
-            this.tbOutputShift.Text = "0000000000000000";
-            this.tbOutputShift.WordWrap = false;
-            this.tbOutputShift.TextChanged += new System.EventHandler(this.tbOutputShift_TextChanged);
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(63, 26);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(26, 19);
-            this.label25.TabIndex = 21;
-            this.label25.Text = "0x";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(3, 26);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(54, 19);
-            this.label26.TabIndex = 20;
-            this.label26.Text = "Rotate";
-            // 
-            // tbInputShift
-            // 
-            this.tbInputShift.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbInputShift.Location = new System.Drawing.Point(91, 23);
-            this.tbInputShift.MaxLength = 16;
-            this.tbInputShift.Name = "tbInputShift";
-            this.tbInputShift.ReadOnly = true;
-            this.tbInputShift.Size = new System.Drawing.Size(160, 27);
-            this.tbInputShift.TabIndex = 19;
-            this.tbInputShift.TabStop = false;
-            this.tbInputShift.Text = "0000000000000000";
-            this.tbInputShift.WordWrap = false;
-            this.tbInputShift.TextChanged += new System.EventHandler(this.tbOperationInput_TextChanged);
+            this.tbInputMask.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbInputMask.Location = new System.Drawing.Point(86, 23);
+            this.tbInputMask.MaxLength = 16;
+            this.tbInputMask.Name = "tbInputMask";
+            this.tbInputMask.Size = new System.Drawing.Size(160, 27);
+            this.tbInputMask.TabIndex = 19;
+            this.tbInputMask.TabStop = false;
+            this.tbInputMask.Text = "0000000000000000";
+            this.tbInputMask.WordWrap = false;
+            this.tbInputMask.TextChanged += new System.EventHandler(this.tbOperationInput_TextChanged);
             // 
             // statusStrip1
             // 
@@ -1782,26 +1501,241 @@
             this.toolStripStatusLabel4.Size = new System.Drawing.Size(36, 17);
             this.toolStripStatusLabel4.Text = "GByte";
             // 
-            // tbClear
+            // rb32BitMode
             // 
-            this.tbClear.Font = new System.Drawing.Font("Tahoma", 11.25F);
-            this.tbClear.Location = new System.Drawing.Point(613, 220);
-            this.tbClear.Name = "tbClear";
-            this.tbClear.Size = new System.Drawing.Size(55, 44);
-            this.tbClear.TabIndex = 27;
-            this.tbClear.Text = "Clear";
-            this.tbClear.UseVisualStyleBackColor = true;
-            this.tbClear.Click += new System.EventHandler(this.tbClear_Click);
+            this.rb32BitMode.AutoSize = true;
+            this.rb32BitMode.Location = new System.Drawing.Point(540, 260);
+            this.rb32BitMode.Name = "rb32BitMode";
+            this.rb32BitMode.Size = new System.Drawing.Size(69, 23);
+            this.rb32BitMode.TabIndex = 27;
+            this.rb32BitMode.Text = "32-Bit";
+            this.rb32BitMode.UseVisualStyleBackColor = true;
+            this.rb32BitMode.CheckedChanged += new System.EventHandler(this.rbMode_CheckedChanged);
+            // 
+            // rb64BitMode
+            // 
+            this.rb64BitMode.AutoSize = true;
+            this.rb64BitMode.Checked = true;
+            this.rb64BitMode.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.rb64BitMode.Location = new System.Drawing.Point(540, 231);
+            this.rb64BitMode.Name = "rb64BitMode";
+            this.rb64BitMode.Size = new System.Drawing.Size(69, 23);
+            this.rb64BitMode.TabIndex = 28;
+            this.rb64BitMode.TabStop = true;
+            this.rb64BitMode.Text = "64-Bit";
+            this.rb64BitMode.UseVisualStyleBackColor = true;
+            this.rb64BitMode.CheckedChanged += new System.EventHandler(this.rbMode_CheckedChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label9.Location = new System.Drawing.Point(635, 57);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(13, 13);
+            this.label9.TabIndex = 85;
+            this.label9.Text = "0";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label10.Location = new System.Drawing.Point(473, 57);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(13, 13);
+            this.label10.TabIndex = 86;
+            this.label10.Text = "8";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label11.Location = new System.Drawing.Point(303, 57);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(19, 13);
+            this.label11.TabIndex = 87;
+            this.label11.Text = "16";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label12.Location = new System.Drawing.Point(141, 57);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(19, 13);
+            this.label12.TabIndex = 88;
+            this.label12.Text = "24";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label13.Location = new System.Drawing.Point(489, 57);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(13, 13);
+            this.label13.TabIndex = 89;
+            this.label13.Text = "7";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label14.Location = new System.Drawing.Point(325, 57);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(19, 13);
+            this.label14.TabIndex = 90;
+            this.label14.Text = "15";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label15.Location = new System.Drawing.Point(162, 57);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(19, 13);
+            this.label15.TabIndex = 91;
+            this.label15.Text = "23";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label16.Location = new System.Drawing.Point(0, 57);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(19, 13);
+            this.label16.TabIndex = 92;
+            this.label16.Text = "31";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label24.Location = new System.Drawing.Point(630, 0);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(19, 13);
+            this.label24.TabIndex = 133;
+            this.label24.Text = "32";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label23.Location = new System.Drawing.Point(467, 0);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(19, 13);
+            this.label23.TabIndex = 134;
+            this.label23.Text = "40";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label22.Location = new System.Drawing.Point(304, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(19, 13);
+            this.label22.TabIndex = 135;
+            this.label22.Text = "48";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label21.Location = new System.Drawing.Point(142, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(19, 13);
+            this.label21.TabIndex = 136;
+            this.label21.Text = "56";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label20.Location = new System.Drawing.Point(490, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(19, 13);
+            this.label20.TabIndex = 137;
+            this.label20.Text = "39";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label19.Location = new System.Drawing.Point(326, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(19, 13);
+            this.label19.TabIndex = 138;
+            this.label19.Text = "47";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label18.Location = new System.Drawing.Point(163, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(19, 13);
+            this.label18.TabIndex = 139;
+            this.label18.Text = "55";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label17.Location = new System.Drawing.Point(1, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(19, 13);
+            this.label17.TabIndex = 140;
+            this.label17.Text = "63";
+            // 
+            // PanelBits
+            // 
+            this.PanelBits.BackColor = System.Drawing.Color.White;
+            this.PanelBits.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.PanelBits.Controls.Add(this.label17);
+            this.PanelBits.Controls.Add(this.label18);
+            this.PanelBits.Controls.Add(this.label19);
+            this.PanelBits.Controls.Add(this.label20);
+            this.PanelBits.Controls.Add(this.label21);
+            this.PanelBits.Controls.Add(this.label22);
+            this.PanelBits.Controls.Add(this.label23);
+            this.PanelBits.Controls.Add(this.label24);
+            this.PanelBits.Controls.Add(this.label16);
+            this.PanelBits.Controls.Add(this.label15);
+            this.PanelBits.Controls.Add(this.label14);
+            this.PanelBits.Controls.Add(this.label13);
+            this.PanelBits.Controls.Add(this.label12);
+            this.PanelBits.Controls.Add(this.label11);
+            this.PanelBits.Controls.Add(this.label10);
+            this.PanelBits.Controls.Add(this.label9);
+            this.PanelBits.Location = new System.Drawing.Point(12, 13);
+            this.PanelBits.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.PanelBits.Name = "PanelBits";
+            this.PanelBits.Size = new System.Drawing.Size(656, 117);
+            this.PanelBits.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 374);
-            this.Controls.Add(this.tbClear);
+            this.Controls.Add(this.rb64BitMode);
+            this.Controls.Add(this.rb32BitMode);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.tbMoveToResult);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -1821,15 +1755,13 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bit Analyzer";
-            this.PanelBits.ResumeLayout(false);
-            this.PanelBits.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.PanelBits.ResumeLayout(false);
+            this.PanelBits.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1837,25 +1769,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel PanelBits;
         private System.Windows.Forms.Label[] Bit;
         private System.Windows.Forms.TextBox[] Nibble;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox tbDecimalPosValue;
         private System.Windows.Forms.TextBox tbHexValue;
         private System.Windows.Forms.Label lblHex;
@@ -1869,8 +1784,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbDecimalNegValue;
         private System.Windows.Forms.Button btnSetAll;
-        private System.Windows.Forms.Button btnShiftRight;
-        private System.Windows.Forms.Button btnShiftLeft;
         private System.Windows.Forms.Button btnAnd;
         private System.Windows.Forms.Button btnOr;
         private System.Windows.Forms.Button btnXor;
@@ -1878,17 +1791,11 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox tbOutputLogical;
+        private System.Windows.Forms.TextBox tbOutput;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tbInputLogical;
-        private System.Windows.Forms.TextBox tbShiftValue;
+        private System.Windows.Forms.TextBox tbInputMask;
         private System.Windows.Forms.Button tbMoveToResult;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox tbOutputShift;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel lblByte;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
@@ -1898,10 +1805,30 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
         private System.Windows.Forms.ToolStripStatusLabel lblGByte;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox tbInputShift;
         private System.Windows.Forms.Button tbClear;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox tbShiftValue;
+        private System.Windows.Forms.Button btnShiftRight;
+        private System.Windows.Forms.Button btnShiftLeft;
+        private System.Windows.Forms.RadioButton rb32BitMode;
+        private System.Windows.Forms.RadioButton rb64BitMode;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Panel PanelBits;
     }
 }
 

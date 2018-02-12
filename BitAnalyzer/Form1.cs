@@ -10,23 +10,22 @@ using System.Windows.Forms;
 
 namespace BitAnalyzer
 {
-    enum BitOperation
-	{
-	    LOGICAL_OPERATION,
-        SHIFT_OPERATION,
-        UNKNOWN_OPERATION
-	};
-
     public partial class Form1 : Form
     {
         private bool IsHexChangeIsLastEdit = true;
-        private BitOperation LastOperationSet = BitOperation.UNKNOWN_OPERATION;
-        
+        private BlankScreen RunningIn32BitModeScreen = new BlankScreen();
+        private String HexDisplayFormat = "X16";
+
         public Form1()
         {
             InitializeComponent();
             InitializeBitMap();
-            
+
+            RunningIn32BitModeScreen.Location = new System.Drawing.Point(2, 2);
+            this.PanelBits.Controls.Add(RunningIn32BitModeScreen);
+            RunningIn32BitModeScreen.BringToFront();
+            RunningIn32BitModeScreen.Visible = false;
+
             foreach (var PanelControl in this.PanelBits.Controls)
             {
                 switch (PanelControl.GetType().ToString())
@@ -74,16 +73,30 @@ namespace BitAnalyzer
 
                 Nibble[NibbleIndex].Text = NibbleValue.ToString("X1");
 
-                foreach (var Cont in this.PanelBits.Controls.OfType<TextBox>())
+                for (int counter = 0; counter < Nibble.Length; counter++)
                 {
-                    HexValue += UInt64.Parse(Cont.Text, System.Globalization.NumberStyles.HexNumber) <<
-                            (Byte.Parse(Cont.Name.Substring(("Nibble").Length)) * 4);
+                    HexValue += UInt64.Parse(Nibble[counter].Text, System.Globalization.NumberStyles.HexNumber) <<
+                        (counter * 4);
                 }
 
-                tbHexValue.Text = HexValue.ToString("X16");
+                if (true == RunningIn32BitModeScreen.Visible)
+                {
+                    HexValue <<= 32;
+                    HexValue >>= 32;
+                }
+
+                tbHexValue.Text = HexValue.ToString(HexDisplayFormat);
                 tbDecimalPosValue.Text = HexValue.ToString();
-                tbDecimalNegValue.Text = ((Int64)UInt64.Parse(tbDecimalPosValue.Text)).ToString();
-                tbOctalValue.Text = ToOctal(Convert.ToUInt64(tbDecimalPosValue.Text));
+                if (true == RunningIn32BitModeScreen.Visible)
+                {
+                    tbDecimalNegValue.Text = ((Int32)UInt32.Parse(tbDecimalPosValue.Text)).ToString();
+                    tbOctalValue.Text = ToOctal(Convert.ToUInt32(tbDecimalPosValue.Text));
+                }
+                else
+                {
+                    tbDecimalNegValue.Text = ((Int64)UInt64.Parse(tbDecimalPosValue.Text)).ToString();
+                    tbOctalValue.Text = ToOctal(Convert.ToUInt64(tbDecimalPosValue.Text));
+                }
             }
             catch (Exception ex)
             {
@@ -121,7 +134,15 @@ namespace BitAnalyzer
                 {
                     try
                     {
-                        UInt64 NumberOfBytes = UInt64.Parse(TextBoxSetting.Text, style);
+                        object NumberOfBytes = 0;
+                        if(true == RunningIn32BitModeScreen.Visible)
+                        {
+                            NumberOfBytes = UInt32.Parse(TextBoxSetting.Text, style);
+                        }
+                        else
+                        {
+                            NumberOfBytes = UInt64.Parse(TextBoxSetting.Text, style);
+                        }
                         Decimal KByte       = Decimal.Parse(NumberOfBytes.ToString()) / 1024;
                         Decimal KByteRem    = Math.Truncate((KByte - Math.Truncate(KByte)) * 1000);
                         Decimal MByte       = KByte / 1024;
@@ -137,9 +158,9 @@ namespace BitAnalyzer
                     catch (OverflowException ex)
                     {
                         MessageBox.Show(ex.Message);
-                        if (ex.Message.Contains("or too small for a UInt64"))
+                        if (ex.Message.Contains("or too small for a UInt"))
                         {
-                            MessageBox.Show("Value is out of 64Bit range.", "Out Of Range", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Value is out of range of selected mode (32/64).", "Out Of Range", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             TrimLastDigit = true;
                         }
                     }
@@ -162,7 +183,7 @@ namespace BitAnalyzer
         {
             if (true == String.IsNullOrEmpty(tbHexValue.Text))
             {
-                tbHexValue.Text = (0).ToString("X16");
+                tbHexValue.Text = (0).ToString(HexDisplayFormat);
             }
         }
 
@@ -214,11 +235,20 @@ namespace BitAnalyzer
                 Source = tbDecimalPosValue;
                 sourceStyle = System.Globalization.NumberStyles.Integer;
                 Target = tbHexValue;
-                targetStyle = "X16";
+                targetStyle = HexDisplayFormat;
             }
-            /*Convert value from hex(decimal) to decimal(hex)*/
-            Target.Text = UInt64.Parse(Source.Text, sourceStyle).ToString(targetStyle);
-            tbOctalValue.Text = ToOctal(Convert.ToUInt64(tbDecimalPosValue.Text));
+            if (true == RunningIn32BitModeScreen.Visible)
+            {
+                /*Convert value from hex(decimal) to decimal(hex)*/
+                Target.Text = UInt32.Parse(Source.Text, sourceStyle).ToString(targetStyle);
+                tbOctalValue.Text = ToOctal(Convert.ToUInt32(tbDecimalPosValue.Text));
+            }
+            else
+            {
+                /*Convert value from hex(decimal) to decimal(hex)*/
+                Target.Text = UInt64.Parse(Source.Text, sourceStyle).ToString(targetStyle);
+                tbOctalValue.Text = ToOctal(Convert.ToUInt64(tbDecimalPosValue.Text));
+            }
             /*Clear all nibbles fields*/
             foreach (var Cont in this.PanelBits.Controls.OfType<TextBox>())
             {
@@ -229,18 +259,39 @@ namespace BitAnalyzer
             {
                 Nibble[counter].Text = tbHexValue.Text.Substring((tbHexValue.Text.Length - counter - 1), 1);
             }
-            tbDecimalNegValue.Text = ((Int64)UInt64.Parse(tbDecimalPosValue.Text)).ToString();
+            if (true == RunningIn32BitModeScreen.Visible)
+            {
+                tbDecimalNegValue.Text = ((Int32)UInt32.Parse(tbDecimalPosValue.Text)).ToString();
+            }
+            else
+            {
+                tbDecimalNegValue.Text = ((Int64)UInt64.Parse(tbDecimalPosValue.Text)).ToString();
+            }
         }
 
         private void btnInvert_Click(object sender, EventArgs e)
         {
             if (true == IsHexChangeIsLastEdit)
             {
-                tbHexValue.Text = (~UInt64.Parse(tbHexValue.Text, System.Globalization.NumberStyles.HexNumber)).ToString("X16");
+                if (true == RunningIn32BitModeScreen.Visible)
+                {
+                    tbHexValue.Text = (~UInt32.Parse(tbHexValue.Text, System.Globalization.NumberStyles.HexNumber)).ToString(HexDisplayFormat);
+                }
+                else
+                {
+                    tbHexValue.Text = (~UInt64.Parse(tbHexValue.Text, System.Globalization.NumberStyles.HexNumber)).ToString(HexDisplayFormat);
+                }
             }
             else
             {
-                tbDecimalPosValue.Text = (~UInt64.Parse(tbDecimalPosValue.Text, System.Globalization.NumberStyles.HexNumber)).ToString(); 
+                if (true == RunningIn32BitModeScreen.Visible)
+                {
+                    tbDecimalPosValue.Text = (~UInt32.Parse(tbDecimalPosValue.Text, System.Globalization.NumberStyles.HexNumber)).ToString();
+                }
+                else
+                {
+                    tbDecimalPosValue.Text = (~UInt64.Parse(tbDecimalPosValue.Text, System.Globalization.NumberStyles.HexNumber)).ToString();
+                }
             }
             Object obj = new Object();
             EventArgs arg = new EventArgs();
@@ -260,26 +311,23 @@ namespace BitAnalyzer
 
         private void SetAllFieldsValue(string value)
         {
-            /*reset all fields to 0s*/
-            foreach (var PanelControl in this.PanelBits.Controls)
+            int NibblesCounter = (true == RunningIn32BitModeScreen.Visible) ? (Nibble.Length / 2) : Nibble.Length;
+            int BitsCounter = (true == RunningIn32BitModeScreen.Visible) ? (Bit.Length / 2) : Bit.Length;
+
+            for (int counter = 0; counter < NibblesCounter; counter++)
             {
-                switch (PanelControl.GetType().ToString())
-                {
-                    case "System.Windows.Forms.TextBox":
-                        ((TextBox)PanelControl).Text = (value == "1") ? "F" : value;
-                        break;
-                    case "System.Windows.Forms.Label":
-                        if (true == ((Label)PanelControl).Name.StartsWith("Bit"))
-                        {
-                            ((Label)PanelControl).Text = value;
-                        }
-                        break;
-                    default:
-                        break;
-                }
+                Nibble[counter].Text = (value == "1") ? "F" : value;
             }
 
-            tbDecimalPosValue.Text = (value == "1") ? UInt64.MaxValue.ToString() : value;
+            if (true == RunningIn32BitModeScreen.Visible)
+            {
+                tbDecimalPosValue.Text = (value == "1") ? UInt32.MaxValue.ToString() : value;
+            }
+            else
+            {
+                tbDecimalPosValue.Text = (value == "1") ? UInt64.MaxValue.ToString() : value;
+            }
+
             Object obj = new Object();
             EventArgs arg = new EventArgs();
             btnApply_Click(obj, arg);
@@ -287,82 +335,110 @@ namespace BitAnalyzer
 
         private void btnOr_Click(object sender, EventArgs e)
         {
-            tbOutputLogical.Text = 
-            (
-                UInt64.Parse(tbHexValue.Text, System.Globalization.NumberStyles.HexNumber) |
-                UInt64.Parse(tbInputLogical.Text, System.Globalization.NumberStyles.HexNumber)
-            ).ToString("X16");
+            if (true == RunningIn32BitModeScreen.Visible)
+            {
+                tbOutput.Text =
+                (
+                    UInt32.Parse(tbHexValue.Text, System.Globalization.NumberStyles.HexNumber) |
+                    UInt32.Parse(tbInputMask.Text, System.Globalization.NumberStyles.HexNumber)
+                ).ToString(HexDisplayFormat);
+            }
+            else
+            {
+                tbOutput.Text =
+                (
+                    UInt64.Parse(tbHexValue.Text, System.Globalization.NumberStyles.HexNumber) |
+                    UInt64.Parse(tbInputMask.Text, System.Globalization.NumberStyles.HexNumber)
+                ).ToString(HexDisplayFormat);
+            }
         }
 
         private void btnAnd_Click(object sender, EventArgs e)
         {
-            tbOutputLogical.Text =
-            (
-                UInt64.Parse(tbHexValue.Text, System.Globalization.NumberStyles.HexNumber) &
-                UInt64.Parse(tbInputLogical.Text, System.Globalization.NumberStyles.HexNumber)
-            ).ToString("X16");
+            if (true == RunningIn32BitModeScreen.Visible)
+            {
+                tbOutput.Text =
+                (
+                    UInt32.Parse(tbHexValue.Text, System.Globalization.NumberStyles.HexNumber) &
+                    UInt32.Parse(tbInputMask.Text, System.Globalization.NumberStyles.HexNumber)
+                ).ToString(HexDisplayFormat);
+            }
+            else
+            {
+                tbOutput.Text =
+                (
+                    UInt64.Parse(tbHexValue.Text, System.Globalization.NumberStyles.HexNumber) &
+                    UInt64.Parse(tbInputMask.Text, System.Globalization.NumberStyles.HexNumber)
+                ).ToString(HexDisplayFormat);
+            }
         }
 
         private void btnXor_Click(object sender, EventArgs e)
         {
-            tbOutputLogical.Text =
-            (
-                UInt64.Parse(tbHexValue.Text, System.Globalization.NumberStyles.HexNumber) ^
-                UInt64.Parse(tbInputLogical.Text, System.Globalization.NumberStyles.HexNumber)
-            ).ToString("X16");
+            if (true == RunningIn32BitModeScreen.Visible)
+            {
+                tbOutput.Text =
+                (
+                    UInt32.Parse(tbHexValue.Text, System.Globalization.NumberStyles.HexNumber) ^
+                    UInt32.Parse(tbInputMask.Text, System.Globalization.NumberStyles.HexNumber)
+                ).ToString(HexDisplayFormat);
+            }
+            else
+            {
+                tbOutput.Text =
+                (
+                    UInt64.Parse(tbHexValue.Text, System.Globalization.NumberStyles.HexNumber) ^
+                    UInt64.Parse(tbInputMask.Text, System.Globalization.NumberStyles.HexNumber)
+                ).ToString(HexDisplayFormat);
+            }
         }
 
         private void btnShiftX_Click(object sender, EventArgs e)
         {
             Button ShiftBtn = sender as Button;
             int PlaceToShift = int.Parse(tbShiftValue.Text);
-            UInt64 Value;
 
-            if (0 == UInt64.Parse(tbOutputShift.Text, System.Globalization.NumberStyles.HexNumber))
+            if (0 == UInt64.Parse(tbOutput.Text, System.Globalization.NumberStyles.HexNumber))
             {
                 /*Get initial value*/
-                tbOutputShift.Text = tbHexValue.Text;
+                tbOutput.Text = tbHexValue.Text;
             }
 
-            Value = UInt64.Parse(tbOutputShift.Text, System.Globalization.NumberStyles.HexNumber);
-            
-            if (ShiftBtn.Name.Equals("btnShiftRight"))
+            if (true == RunningIn32BitModeScreen.Visible)
             {
-                Value >>= PlaceToShift;
+                UInt32 Value = UInt32.Parse(tbOutput.Text, System.Globalization.NumberStyles.HexNumber);
+                if (ShiftBtn.Name.Equals("btnShiftRight"))
+                {
+                    Value >>= PlaceToShift;
+                }
+                else if (ShiftBtn.Name.Equals("btnShiftLeft"))
+                {
+                    Value <<= PlaceToShift;
+                }
+                tbOutput.Text = Value.ToString(HexDisplayFormat);
             }
-            else if(ShiftBtn.Name.Equals("btnShiftLeft"))
+            else
             {
-                Value <<= PlaceToShift;
+                UInt64 Value = UInt64.Parse(tbOutput.Text, System.Globalization.NumberStyles.HexNumber);
+
+                if (ShiftBtn.Name.Equals("btnShiftRight"))
+                {
+                    Value >>= PlaceToShift;
+                }
+                else if (ShiftBtn.Name.Equals("btnShiftLeft"))
+                {
+                    Value <<= PlaceToShift;
+                }
+                tbOutput.Text = Value.ToString(HexDisplayFormat);
             }
-            tbOutputShift.Text = Value.ToString("X16");
         }
 
         private void tbMoveToResult_Click(object sender, EventArgs e)
         {
-            switch (LastOperationSet)
-            {
-                case BitOperation.LOGICAL_OPERATION:
-                    tbHexValue.Text = tbOutputLogical.Text;
-                    break;
-                case BitOperation.SHIFT_OPERATION:
-                    tbHexValue.Text = tbOutputShift.Text;
-                    break;
-                case BitOperation.UNKNOWN_OPERATION:
-                    break;
-            }
+            tbHexValue.Text = tbOutput.Text;
             Object obj = new Object();
             EventArgs arg = new EventArgs();
             btnApply_Click(obj, arg);
-        }
-
-        private void tbOutputLogical_TextChanged(object sender, EventArgs e)
-        {
-            LastOperationSet = BitOperation.LOGICAL_OPERATION;
-        }
-
-        private void tbOutputShift_TextChanged(object sender, EventArgs e)
-        {
-            LastOperationSet = BitOperation.SHIFT_OPERATION;
         }
 
         private void tbOperationInput_TextChanged(object sender, EventArgs e)
@@ -419,12 +495,43 @@ namespace BitAnalyzer
 
         private void tbClear_Click(object sender, EventArgs e)
         {
-            tbInputLogical.Text = (0).ToString("X16");
-            tbOutputLogical.Text = (0).ToString("X16");
-            tbInputShift.Text = (0).ToString("X16");
-            tbOutputShift.Text = (0).ToString("X16");
+            tbInputMask.Text = (0).ToString(HexDisplayFormat);
+            tbOutput.Text = (0).ToString(HexDisplayFormat);
+            //tbInputShift.Text = (0).ToString(HexDisplayFormat);
+            //tbOutputShift.Text = (0).ToString(HexDisplayFormat);
             tbShiftValue.Text = "0";
-            LastOperationSet = BitOperation.UNKNOWN_OPERATION;
+        }
+
+        private void rbMode_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton rbMode = sender as RadioButton;
+            if (true == rbMode.Checked)
+            {
+                switch (rbMode.Name)
+                {
+                    case "rb32BitMode":
+                        RunningIn32BitModeScreen.Visible = true;
+                        HexDisplayFormat = "X8";
+                        tbHexValue.MaxLength = 8;
+                        tbInputMask.MaxLength = 8;
+                        tbOutput.MaxLength = 8;
+                        break;
+                    default:
+                    case "rb64BitMode":
+                        RunningIn32BitModeScreen.Visible = false;
+                        HexDisplayFormat = "X16";
+                        tbHexValue.MaxLength = 16;
+                        tbInputMask.MaxLength = 16;
+                        tbOutput.MaxLength = 16;
+                        break;
+                }
+
+                tbHexValue.Text = 0.ToString(HexDisplayFormat);
+                tbOutput.Text = 0.ToString(HexDisplayFormat);
+                tbInputMask.Text = 0.ToString(HexDisplayFormat);
+
+                SetAllFieldsValue("0");
+            }
         }
     }
 }
