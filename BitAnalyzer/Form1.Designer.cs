@@ -1071,8 +1071,6 @@
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblGByte = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.rb32BitMode = new System.Windows.Forms.RadioButton();
-            this.rb64BitMode = new System.Windows.Forms.RadioButton();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -1090,6 +1088,9 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.PanelBits = new System.Windows.Forms.Panel();
+            this.rb32BitMode = new System.Windows.Forms.RadioButton();
+            this.rb64BitMode = new System.Windows.Forms.RadioButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -1153,7 +1154,7 @@
             // btnResetAll
             // 
             this.btnResetAll.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.btnResetAll.Location = new System.Drawing.Point(7, 56);
+            this.btnResetAll.Location = new System.Drawing.Point(8, 56);
             this.btnResetAll.Name = "btnResetAll";
             this.btnResetAll.Size = new System.Drawing.Size(77, 30);
             this.btnResetAll.TabIndex = 6;
@@ -1193,7 +1194,7 @@
             // btnInvert
             // 
             this.btnInvert.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.btnInvert.Location = new System.Drawing.Point(7, 20);
+            this.btnInvert.Location = new System.Drawing.Point(8, 20);
             this.btnInvert.Name = "btnInvert";
             this.btnInvert.Size = new System.Drawing.Size(77, 30);
             this.btnInvert.TabIndex = 10;
@@ -1224,7 +1225,7 @@
             // btnSetAll
             // 
             this.btnSetAll.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.btnSetAll.Location = new System.Drawing.Point(7, 92);
+            this.btnSetAll.Location = new System.Drawing.Point(8, 92);
             this.btnSetAll.Name = "btnSetAll";
             this.btnSetAll.Size = new System.Drawing.Size(77, 30);
             this.btnSetAll.TabIndex = 13;
@@ -1235,7 +1236,7 @@
             // btnAnd
             // 
             this.btnAnd.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAnd.Location = new System.Drawing.Point(134, 56);
+            this.btnAnd.Location = new System.Drawing.Point(137, 56);
             this.btnAnd.Name = "btnAnd";
             this.btnAnd.Size = new System.Drawing.Size(42, 26);
             this.btnAnd.TabIndex = 17;
@@ -1246,7 +1247,7 @@
             // btnOr
             // 
             this.btnOr.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOr.Location = new System.Drawing.Point(86, 56);
+            this.btnOr.Location = new System.Drawing.Point(89, 56);
             this.btnOr.Name = "btnOr";
             this.btnOr.Size = new System.Drawing.Size(42, 26);
             this.btnOr.TabIndex = 16;
@@ -1257,7 +1258,7 @@
             // btnXor
             // 
             this.btnXor.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXor.Location = new System.Drawing.Point(182, 56);
+            this.btnXor.Location = new System.Drawing.Point(185, 56);
             this.btnXor.Name = "btnXor";
             this.btnXor.Size = new System.Drawing.Size(42, 26);
             this.btnXor.TabIndex = 18;
@@ -1273,7 +1274,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(12, 211);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(90, 132);
+            this.groupBox1.Size = new System.Drawing.Size(94, 132);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Control";
@@ -1298,7 +1299,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(114, 211);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(409, 132);
+            this.groupBox2.Size = new System.Drawing.Size(417, 132);
             this.groupBox2.TabIndex = 20;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Bitwise Operations";
@@ -1306,7 +1307,7 @@
             // tbClear
             // 
             this.tbClear.Font = new System.Drawing.Font("Tahoma", 11.25F);
-            this.tbClear.Location = new System.Drawing.Point(334, 56);
+            this.tbClear.Location = new System.Drawing.Point(337, 56);
             this.tbClear.Name = "tbClear";
             this.tbClear.Size = new System.Drawing.Size(64, 26);
             this.tbClear.TabIndex = 27;
@@ -1317,7 +1318,7 @@
             // tbMoveToResult
             // 
             this.tbMoveToResult.Font = new System.Drawing.Font("Tahoma", 11.25F);
-            this.tbMoveToResult.Location = new System.Drawing.Point(260, 88);
+            this.tbMoveToResult.Location = new System.Drawing.Point(263, 88);
             this.tbMoveToResult.Name = "tbMoveToResult";
             this.tbMoveToResult.Size = new System.Drawing.Size(138, 26);
             this.tbMoveToResult.TabIndex = 14;
@@ -1329,7 +1330,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(268, 26);
+            this.label6.Location = new System.Drawing.Point(271, 26);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(83, 19);
             this.label6.TabIndex = 30;
@@ -1338,7 +1339,7 @@
             // tbShiftValue
             // 
             this.tbShiftValue.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbShiftValue.Location = new System.Drawing.Point(356, 23);
+            this.tbShiftValue.Location = new System.Drawing.Point(359, 23);
             this.tbShiftValue.MaxLength = 2;
             this.tbShiftValue.Name = "tbShiftValue";
             this.tbShiftValue.Size = new System.Drawing.Size(42, 27);
@@ -1351,7 +1352,7 @@
             // btnShiftRight
             // 
             this.btnShiftRight.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShiftRight.Location = new System.Drawing.Point(278, 56);
+            this.btnShiftRight.Location = new System.Drawing.Point(281, 56);
             this.btnShiftRight.Name = "btnShiftRight";
             this.btnShiftRight.Size = new System.Drawing.Size(42, 26);
             this.btnShiftRight.TabIndex = 27;
@@ -1362,7 +1363,7 @@
             // btnShiftLeft
             // 
             this.btnShiftLeft.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShiftLeft.Location = new System.Drawing.Point(230, 56);
+            this.btnShiftLeft.Location = new System.Drawing.Point(233, 56);
             this.btnShiftLeft.Name = "btnShiftLeft";
             this.btnShiftLeft.Size = new System.Drawing.Size(42, 26);
             this.btnShiftLeft.TabIndex = 28;
@@ -1374,7 +1375,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(60, 92);
+            this.label4.Location = new System.Drawing.Point(63, 92);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(26, 19);
             this.label4.TabIndex = 24;
@@ -1384,7 +1385,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 92);
+            this.label5.Location = new System.Drawing.Point(6, 92);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 19);
             this.label5.TabIndex = 23;
@@ -1393,7 +1394,7 @@
             // tbOutput
             // 
             this.tbOutput.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbOutput.Location = new System.Drawing.Point(86, 88);
+            this.tbOutput.Location = new System.Drawing.Point(89, 88);
             this.tbOutput.MaxLength = 16;
             this.tbOutput.Name = "tbOutput";
             this.tbOutput.ReadOnly = true;
@@ -1407,7 +1408,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(60, 26);
+            this.label2.Location = new System.Drawing.Point(63, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(26, 19);
             this.label2.TabIndex = 21;
@@ -1417,7 +1418,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 26);
+            this.label3.Location = new System.Drawing.Point(6, 26);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 19);
             this.label3.TabIndex = 20;
@@ -1426,7 +1427,7 @@
             // tbInputMask
             // 
             this.tbInputMask.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbInputMask.Location = new System.Drawing.Point(86, 23);
+            this.tbInputMask.Location = new System.Drawing.Point(89, 23);
             this.tbInputMask.MaxLength = 16;
             this.tbInputMask.Name = "tbInputMask";
             this.tbInputMask.Size = new System.Drawing.Size(160, 27);
@@ -1500,31 +1501,6 @@
             this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
             this.toolStripStatusLabel4.Size = new System.Drawing.Size(36, 17);
             this.toolStripStatusLabel4.Text = "GByte";
-            // 
-            // rb32BitMode
-            // 
-            this.rb32BitMode.AutoSize = true;
-            this.rb32BitMode.Location = new System.Drawing.Point(540, 260);
-            this.rb32BitMode.Name = "rb32BitMode";
-            this.rb32BitMode.Size = new System.Drawing.Size(69, 23);
-            this.rb32BitMode.TabIndex = 27;
-            this.rb32BitMode.Text = "32-Bit";
-            this.rb32BitMode.UseVisualStyleBackColor = true;
-            this.rb32BitMode.CheckedChanged += new System.EventHandler(this.rbMode_CheckedChanged);
-            // 
-            // rb64BitMode
-            // 
-            this.rb64BitMode.AutoSize = true;
-            this.rb64BitMode.Checked = true;
-            this.rb64BitMode.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.rb64BitMode.Location = new System.Drawing.Point(540, 231);
-            this.rb64BitMode.Name = "rb64BitMode";
-            this.rb64BitMode.Size = new System.Drawing.Size(69, 23);
-            this.rb64BitMode.TabIndex = 28;
-            this.rb64BitMode.TabStop = true;
-            this.rb64BitMode.Text = "64-Bit";
-            this.rb64BitMode.UseVisualStyleBackColor = true;
-            this.rb64BitMode.CheckedChanged += new System.EventHandler(this.rbMode_CheckedChanged);
             // 
             // label9
             // 
@@ -1728,6 +1704,38 @@
             this.PanelBits.Size = new System.Drawing.Size(656, 117);
             this.PanelBits.TabIndex = 0;
             // 
+            // rb32BitMode
+            // 
+            this.rb32BitMode.AutoSize = true;
+            this.rb32BitMode.Location = new System.Drawing.Point(540, 260);
+            this.rb32BitMode.Name = "rb32BitMode";
+            this.rb32BitMode.Size = new System.Drawing.Size(69, 23);
+            this.rb32BitMode.TabIndex = 27;
+            this.rb32BitMode.Text = "32-Bit";
+            this.rb32BitMode.UseVisualStyleBackColor = true;
+            this.rb32BitMode.CheckedChanged += new System.EventHandler(this.rbMode_CheckedChanged);
+            // 
+            // rb64BitMode
+            // 
+            this.rb64BitMode.AutoSize = true;
+            this.rb64BitMode.Checked = true;
+            this.rb64BitMode.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.rb64BitMode.Location = new System.Drawing.Point(540, 231);
+            this.rb64BitMode.Name = "rb64BitMode";
+            this.rb64BitMode.Size = new System.Drawing.Size(69, 23);
+            this.rb64BitMode.TabIndex = 28;
+            this.rb64BitMode.TabStop = true;
+            this.rb64BitMode.Text = "64-Bit";
+            this.rb64BitMode.UseVisualStyleBackColor = true;
+            this.rb64BitMode.CheckedChanged += new System.EventHandler(this.rbMode_CheckedChanged);
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(537, 220);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(131, 123);
+            this.panel1.TabIndex = 29;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -1749,10 +1757,13 @@
             this.Controls.Add(this.tbHexValue);
             this.Controls.Add(this.tbDecimalPosValue);
             this.Controls.Add(this.PanelBits);
+            this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.MaximizeBox = false;
             this.Name = "Form1";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bit Analyzer";
             this.groupBox1.ResumeLayout(false);
@@ -1810,8 +1821,6 @@
         private System.Windows.Forms.TextBox tbShiftValue;
         private System.Windows.Forms.Button btnShiftRight;
         private System.Windows.Forms.Button btnShiftLeft;
-        private System.Windows.Forms.RadioButton rb32BitMode;
-        private System.Windows.Forms.RadioButton rb64BitMode;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
@@ -1829,6 +1838,9 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Panel PanelBits;
+        private System.Windows.Forms.RadioButton rb32BitMode;
+        private System.Windows.Forms.RadioButton rb64BitMode;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

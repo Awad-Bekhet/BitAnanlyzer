@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -58,7 +59,7 @@ namespace BitAnalyzer
                 int NibbleIndex = BitNumber / 4;
                 UInt64 HexValue = 0;
 
-                NibbleValue = Byte.Parse(Nibble[NibbleIndex].Text, System.Globalization.NumberStyles.HexNumber);
+                NibbleValue = Byte.Parse(Nibble[NibbleIndex].Text, NumberStyles.HexNumber);
 
                 if ("0" == Bit.Text)
                 {
@@ -75,7 +76,7 @@ namespace BitAnalyzer
 
                 for (int counter = 0; counter < Nibble.Length; counter++)
                 {
-                    HexValue += UInt64.Parse(Nibble[counter].Text, System.Globalization.NumberStyles.HexNumber) <<
+                    HexValue += UInt64.Parse(Nibble[counter].Text, NumberStyles.HexNumber) <<
                         (counter * 4);
                 }
 
@@ -108,18 +109,19 @@ namespace BitAnalyzer
         {
             TextBox TextBoxSetting = sender as TextBox;
             String regexPattern = "";
-            System.Globalization.NumberStyles style;
+            NumberStyles style;
+
             if (TextBoxSetting.Name == "tbHexValue")
             {
                 this.IsHexChangeIsLastEdit = true;
                 regexPattern = @"\A\b[0-9a-fA-F]+\b\Z";
-                style = System.Globalization.NumberStyles.HexNumber;
+                style = NumberStyles.HexNumber;
             }
             else
             {
                 this.IsHexChangeIsLastEdit = false;
                 regexPattern = @"\A\b[0-9]+\b\Z";
-                style = System.Globalization.NumberStyles.Integer;
+                style = NumberStyles.Integer;
             }
 
             if (false == String.IsNullOrEmpty(TextBoxSetting.Text))
@@ -178,7 +180,7 @@ namespace BitAnalyzer
                 }
             }
         }
-        
+
         private void tbHexValue_Leave(object sender, EventArgs e)
         {
             if (true == String.IsNullOrEmpty(tbHexValue.Text))
@@ -208,7 +210,7 @@ namespace BitAnalyzer
         private void NibbleX_TextChanged(object sender, EventArgs e)
         {
             TextBox source = sender as TextBox;
-            Byte sourceValue = Byte.Parse(source.Text, System.Globalization.NumberStyles.HexNumber);
+            Byte sourceValue = Byte.Parse(source.Text, NumberStyles.HexNumber);
             Byte nibbleNumber = Byte.Parse(source.Name.Substring("Nibble".Length));
             /*Update bitfields relative to nibble number*/
             Bit[(nibbleNumber * 4) + 0].Text = ((sourceValue >> 0) & 0x1).ToString();
@@ -219,21 +221,21 @@ namespace BitAnalyzer
 
         private void btnApply_Click(object sender, EventArgs e)
         {
-            System.Globalization.NumberStyles sourceStyle;
+            NumberStyles sourceStyle;
             string targetStyle;
             TextBox Target;
             TextBox Source;
             if (true == IsHexChangeIsLastEdit)
             {
                 Source = tbHexValue;
-                sourceStyle = System.Globalization.NumberStyles.HexNumber;
+                sourceStyle = NumberStyles.HexNumber;
                 Target = tbDecimalPosValue;
                 targetStyle = "0";
             }
             else
             {
                 Source = tbDecimalPosValue;
-                sourceStyle = System.Globalization.NumberStyles.Integer;
+                sourceStyle = NumberStyles.Integer;
                 Target = tbHexValue;
                 targetStyle = HexDisplayFormat;
             }
@@ -275,22 +277,22 @@ namespace BitAnalyzer
             {
                 if (true == RunningIn32BitModeScreen.Visible)
                 {
-                    tbHexValue.Text = (~UInt32.Parse(tbHexValue.Text, System.Globalization.NumberStyles.HexNumber)).ToString(HexDisplayFormat);
+                    tbHexValue.Text = (~UInt32.Parse(tbHexValue.Text, NumberStyles.HexNumber)).ToString(HexDisplayFormat);
                 }
                 else
                 {
-                    tbHexValue.Text = (~UInt64.Parse(tbHexValue.Text, System.Globalization.NumberStyles.HexNumber)).ToString(HexDisplayFormat);
+                    tbHexValue.Text = (~UInt64.Parse(tbHexValue.Text, NumberStyles.HexNumber)).ToString(HexDisplayFormat);
                 }
             }
             else
             {
                 if (true == RunningIn32BitModeScreen.Visible)
                 {
-                    tbDecimalPosValue.Text = (~UInt32.Parse(tbDecimalPosValue.Text, System.Globalization.NumberStyles.HexNumber)).ToString();
+                    tbDecimalPosValue.Text = (~UInt32.Parse(tbDecimalPosValue.Text, NumberStyles.HexNumber)).ToString();
                 }
                 else
                 {
-                    tbDecimalPosValue.Text = (~UInt64.Parse(tbDecimalPosValue.Text, System.Globalization.NumberStyles.HexNumber)).ToString();
+                    tbDecimalPosValue.Text = (~UInt64.Parse(tbDecimalPosValue.Text, NumberStyles.HexNumber)).ToString();
                 }
             }
             Object obj = new Object();
@@ -339,16 +341,16 @@ namespace BitAnalyzer
             {
                 tbOutput.Text =
                 (
-                    UInt32.Parse(tbHexValue.Text, System.Globalization.NumberStyles.HexNumber) |
-                    UInt32.Parse(tbInputMask.Text, System.Globalization.NumberStyles.HexNumber)
+                    UInt32.Parse(tbHexValue.Text, NumberStyles.HexNumber) |
+                    UInt32.Parse(tbInputMask.Text, NumberStyles.HexNumber)
                 ).ToString(HexDisplayFormat);
             }
             else
             {
                 tbOutput.Text =
                 (
-                    UInt64.Parse(tbHexValue.Text, System.Globalization.NumberStyles.HexNumber) |
-                    UInt64.Parse(tbInputMask.Text, System.Globalization.NumberStyles.HexNumber)
+                    UInt64.Parse(tbHexValue.Text, NumberStyles.HexNumber) |
+                    UInt64.Parse(tbInputMask.Text, NumberStyles.HexNumber)
                 ).ToString(HexDisplayFormat);
             }
         }
@@ -359,16 +361,16 @@ namespace BitAnalyzer
             {
                 tbOutput.Text =
                 (
-                    UInt32.Parse(tbHexValue.Text, System.Globalization.NumberStyles.HexNumber) &
-                    UInt32.Parse(tbInputMask.Text, System.Globalization.NumberStyles.HexNumber)
+                    UInt32.Parse(tbHexValue.Text, NumberStyles.HexNumber) &
+                    UInt32.Parse(tbInputMask.Text, NumberStyles.HexNumber)
                 ).ToString(HexDisplayFormat);
             }
             else
             {
                 tbOutput.Text =
                 (
-                    UInt64.Parse(tbHexValue.Text, System.Globalization.NumberStyles.HexNumber) &
-                    UInt64.Parse(tbInputMask.Text, System.Globalization.NumberStyles.HexNumber)
+                    UInt64.Parse(tbHexValue.Text, NumberStyles.HexNumber) &
+                    UInt64.Parse(tbInputMask.Text, NumberStyles.HexNumber)
                 ).ToString(HexDisplayFormat);
             }
         }
@@ -379,16 +381,16 @@ namespace BitAnalyzer
             {
                 tbOutput.Text =
                 (
-                    UInt32.Parse(tbHexValue.Text, System.Globalization.NumberStyles.HexNumber) ^
-                    UInt32.Parse(tbInputMask.Text, System.Globalization.NumberStyles.HexNumber)
+                    UInt32.Parse(tbHexValue.Text, NumberStyles.HexNumber) ^
+                    UInt32.Parse(tbInputMask.Text, NumberStyles.HexNumber)
                 ).ToString(HexDisplayFormat);
             }
             else
             {
                 tbOutput.Text =
                 (
-                    UInt64.Parse(tbHexValue.Text, System.Globalization.NumberStyles.HexNumber) ^
-                    UInt64.Parse(tbInputMask.Text, System.Globalization.NumberStyles.HexNumber)
+                    UInt64.Parse(tbHexValue.Text, NumberStyles.HexNumber) ^
+                    UInt64.Parse(tbInputMask.Text, NumberStyles.HexNumber)
                 ).ToString(HexDisplayFormat);
             }
         }
@@ -398,7 +400,7 @@ namespace BitAnalyzer
             Button ShiftBtn = sender as Button;
             int PlaceToShift = int.Parse(tbShiftValue.Text);
 
-            if (0 == UInt64.Parse(tbOutput.Text, System.Globalization.NumberStyles.HexNumber))
+            if (0 == UInt64.Parse(tbOutput.Text, NumberStyles.HexNumber))
             {
                 /*Get initial value*/
                 tbOutput.Text = tbHexValue.Text;
@@ -406,7 +408,7 @@ namespace BitAnalyzer
 
             if (true == RunningIn32BitModeScreen.Visible)
             {
-                UInt32 Value = UInt32.Parse(tbOutput.Text, System.Globalization.NumberStyles.HexNumber);
+                UInt32 Value = UInt32.Parse(tbOutput.Text, NumberStyles.HexNumber);
                 if (ShiftBtn.Name.Equals("btnShiftRight"))
                 {
                     Value >>= PlaceToShift;
@@ -419,7 +421,7 @@ namespace BitAnalyzer
             }
             else
             {
-                UInt64 Value = UInt64.Parse(tbOutput.Text, System.Globalization.NumberStyles.HexNumber);
+                UInt64 Value = UInt64.Parse(tbOutput.Text, NumberStyles.HexNumber);
 
                 if (ShiftBtn.Name.Equals("btnShiftRight"))
                 {
