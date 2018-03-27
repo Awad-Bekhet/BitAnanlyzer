@@ -289,11 +289,11 @@ namespace BitAnalyzer
             {
                 if (true == RunningIn32BitModeScreen.Visible)
                 {
-                    tbDecimalPosValue.Text = (~UInt32.Parse(tbDecimalPosValue.Text, NumberStyles.HexNumber)).ToString();
+                    tbHexValue.Text = (~UInt32.Parse(tbHexValue.Text, NumberStyles.HexNumber)).ToString(HexDisplayFormat);
                 }
                 else
                 {
-                    tbDecimalPosValue.Text = (~UInt64.Parse(tbDecimalPosValue.Text, NumberStyles.HexNumber)).ToString();
+                    tbHexValue.Text = (~UInt64.Parse(tbHexValue.Text, NumberStyles.HexNumber)).ToString(HexDisplayFormat);
                 }
             }
             Object obj = new Object();
