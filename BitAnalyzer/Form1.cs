@@ -48,7 +48,7 @@ namespace BitAnalyzer
 	            }
             }
             /*Make 32Bit as default*/
-            rb32BitMode.Checked = true;
+            rb32BitMode.Checked = Properties.Settings.Default.LastWorkingMode;
         }
 
         private void BitX_Click(object sender, EventArgs e)
@@ -535,6 +535,12 @@ namespace BitAnalyzer
 
                 SetAllFieldsValue("0");
             }
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.LastWorkingMode = rb32BitMode.Checked;
+            Properties.Settings.Default.Save(); 
         }
     }
 }
